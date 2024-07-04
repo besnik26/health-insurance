@@ -1,0 +1,48 @@
+@import "breakpoints";
+
+
+* {
+    font-family: Raleway, sans-serif;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+  }
+  
+  html, body {
+    height: 100%;
+  }
+  
+  h1 {
+    font-size: 32px;
+    font-weight: 800;
+  }
+  
+  h2 {
+    font-size: 24px;
+    font-weight: 800;
+  }
+  
+  h3 {
+    font-size: 18.72px;
+    font-weight: 700;
+  }
+  
+  h4 {
+    font-size: 16px;
+    font-weight: 600;
+  }
+  
+  h5 {
+    font-size: 13.28px;
+    font-weight: 400;
+  }
+  
+  h6 {
+    font-size: 11.5px;
+    font-weight: 400;
+  }
+  
+  p {
+    font-size: 16px;
+    font-weight: 500;
+  }

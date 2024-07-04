@@ -1,0 +1,223 @@
+@import "../../styles/index.scss";
+
+.full-width {
+  width: 100%;
+//   background-color: $primary-color;
+  margin-top: 100px;
+  position: relative;
+
+  .position-absolut {
+    position: absolute;
+    width: 100%;
+    top: -80px;
+    margin: 0 auto;
+    display: grid;
+    justify-items: center;
+    padding: 0 16px;
+
+    .subscribe {
+      max-width: 1100px;
+      width: 100%;
+      display: grid;
+      grid-auto-flow: column;
+      align-items: center;
+      justify-content: space-between;
+      background-color: #f6f6f6;
+      border-radius: 16px;
+      height: 166px;
+      padding: 0 40px 0 40px;
+
+      .content {
+        display: grid;
+        gap: 15px;
+        width: 100%;
+        max-width: 496px;
+
+        h3,
+        p {
+          margin: 0;
+        }
+
+        p {
+        //   color: $third-color;
+        }
+        @include mobile-view {
+          gap: 5px;
+        }
+      }
+
+      .form {
+        form {
+          .input {
+            max-width: 418px;
+            width: 100%;
+            display: grid;
+            grid-template-columns: minmax(auto, 293px) 125px;
+            width: 100%;
+            height: 50px;
+            // background-color: $white-color;
+            padding: 5px 5px 5px 10px;
+            border-radius: 8px;
+            input {
+              height: 100%;
+              border: 0;
+              background-color: transparent;
+
+              &:focus-visible {
+                outline: none;
+              }
+              @include mobile-view {
+                height: 40px;
+                // background-color: $white-color;
+                padding: 8px 11px;
+              }
+            }
+            button {
+            //   background-color: $primary-color;
+              height: 40px;
+              border: 0;
+              border-radius: 8px;
+              width: 125px;
+            //   color: $white-color;
+
+              &:disabled {
+                background-color: #ee2f3c;
+                cursor: not-allowed;
+              }
+              @include mobile-view {
+                width: 100%;
+              }
+            }
+            @include mobile-view {
+              grid-template-columns: 1fr;
+              background-color: transparent;
+              height: 100%;
+              gap: 12px;
+            }
+          }
+          .errors {
+            span {
+            //   color: $primary-color;
+              font-size: 12px;
+            }
+          }
+        }
+      }
+      @include mobile-view {
+        padding: 16px;
+        grid-auto-flow: row;
+        border-radius: 0;
+        height: 100%;
+        text-align: center;
+        row-gap: 20px;
+      }
+    }
+    @include mobile-view {
+      padding: 0;
+    }
+  }
+
+  .footer-section {
+    display: grid;
+    row-gap: 30px;
+    padding: 160px 30px 30px 30px;
+    .footer {
+      display: grid;
+      grid-auto-flow: column;
+
+      .work-hours,
+      .contact,
+      .tel {
+        ul {
+          list-style: none;
+          padding: 0;
+          display: grid;
+          gap: 10px;
+          li {
+            &:first-of-type {
+            //   color: $white-color;
+              font-size: 16px;
+            }
+            color: #f9a2a7;
+            font-size: 13.28px;
+
+            a {
+              color: #f9a2a7;
+              text-decoration: none;
+            }
+          }
+        }
+      }
+      .media {
+        display: grid;
+        gap: 24px;
+
+        .social-media {
+          display: grid;
+          grid-auto-flow: column;
+          justify-content: start;
+          gap: 12px;
+        }
+
+        @include mobile-view {
+          margin-bottom: 24px;
+        }
+      }
+
+      @include mobile-view {
+        justify-items: center;
+        text-align: center;
+        grid-auto-flow: row;
+      }
+    }
+    .rights {
+      display: grid;
+      grid-auto-flow: column;
+      align-items: center;
+      justify-content: space-between;
+
+      .text {
+        h6 {
+          color: #f9a2a7;
+        }
+      }
+
+      .links {
+        ul {
+          display: grid;
+          grid-auto-flow: column;
+          list-style: none;
+        //   gap: $space-md;
+          mat-divider {
+            border: 1px solid #f9a2a7;
+          }
+          li {
+            font-size: 11.5px;
+            color: #f9a2a7;
+
+            a {
+              font-size: 11.5px;
+              color: #f9a2a7;
+              text-decoration: none;
+            }
+          }
+
+          @include mobile-view {
+            padding: 0;
+            margin: 0;
+          }
+        }
+      }
+
+      @include mobile-view {
+        justify-items: center;
+        text-align: center;
+        grid-auto-flow: row;
+      }
+    }
+
+    @include mobile-view {
+      padding: 160px 16px 16px 16px;
+    }
+  }
+}

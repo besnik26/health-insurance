@@ -14,7 +14,7 @@
 .navbar{
   box-shadow: 0 0 6px #00000014;
   padding: 15px 16px 15px 8px;
-  border-radius: 50px;
+  border-radius: 16px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -34,14 +34,14 @@
         min-width: 91px;
         text-align: center;
         a{
-          color: #062C58;
+          color: #186cce;
         }
       }
       .k-vergleich{
         min-width: 198px;
         text-align: center;
         a{
-          color: #062C58;
+          color: #186cce;
         }
       }
       li{
@@ -130,7 +130,7 @@
               border-radius: 23px 0 0 23px;
               padding: 11px 0 11px 7px;
               .bold-text{
-                color: #062C58!important;
+                color: #186cce!important;
               }
               a{
                 color: #506B8A;

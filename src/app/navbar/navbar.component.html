@@ -8,7 +8,7 @@
           <div class="mobile-menu" [class.open]="isMenuOpen" [class.close]="!isMenuOpen">
             <div class="nav-list">
               <ul class="header-nav">
-                <li class="nav-li" (click)="closeDropdown()"><a routerLinkActive="bold-text" (click)="scrollToTop()" [routerLink]="['/', selectedLanguage, 'startseite']" >
+                <li class="nav-li" (click)="closeDropdown()"><a routerLinkActive="bold-text" (click)="scrollToTop()"  >
                   Home
                 </a></li>
                 <li class="dropdown k-vergleich" (click)="toggleDropdown()">
@@ -22,20 +22,20 @@
                     <div class="white-background">
                       <ul class="main-menu desktop-only">
                         <div class="white-background">
-                          <li (click)="scrollToTop()" [routerLink]="['/', selectedLanguage, 'grundversicherung']" class="grund" ><a routerLinkActive="bold-text" >Basic insurance</a></li>
+                          <li (click)="scrollToTop()"  class="grund" ><a routerLinkActive="bold-text" >Basic insurance</a></li>
                         </div>
-                        <li (click)="scrollToTop()" [routerLink]="['/', selectedLanguage, 'zusatzversicherung']" class="zusatz"><a routerLinkActive="bold-text" >Additional insurance</a></li>
+                        <li (click)="scrollToTop()"  class="zusatz"><a routerLinkActive="bold-text" >Additional insurance</a></li>
                         <div class="white-background">
-                          <li (click)="scrollToTop()" [routerLink]="['/', selectedLanguage, 'neu-in-der-schweiz']"  class="neu"><a routerLinkActive="bold-text" >New in</a></li>
+                          <li (click)="scrollToTop()"   class="neu"><a routerLinkActive="bold-text" >New in</a></li>
                         </div>
-                        <li (click)="scrollToTop()" [routerLink]="['/', selectedLanguage, 'neugeborene-babys']" ><a routerLinkActive="bold-text" >Newborn babies</a></li>
-                        <li (click)="scrollToTop()" [routerLink]="['/', selectedLanguage, 'krankenkassen-listen']" ><a routerLinkActive="bold-text" >Health insurance</a></li>
-                        <li (click)="scrollToTop()" [routerLink]="['/', selectedLanguage, 'online-beratung']" ><a routerLinkActive="bold-text" >Online Beratung</a></li>
+                        <li (click)="scrollToTop()" ><a routerLinkActive="bold-text" >Newborn babies</a></li>
+                        <li (click)="scrollToTop()" ><a routerLinkActive="bold-text" >Health insurance</a></li>
+                        <li (click)="scrollToTop()" ><a routerLinkActive="bold-text" >Online Beratung</a></li>
                       </ul>
                     </div>
   
                     <ul class="main-menu mobile-only">
-                      <li (click)="scrollToTop()" [routerLink]="['/', selectedLanguage, 'grundversicherung']"><a (click)="closeAllDropdowns()" routerLinkActive="zusatz-active" >Basic insurance</a></li>
+                      <li (click)="scrollToTop()"><a (click)="closeAllDropdowns()" routerLinkActive="zusatz-active" >Basic insurance</a></li>
                       <li class="second-dropdown" (click)="toggleSecondDropdown()">
                         <a [ngClass]="{'zusatz-active': isSecondDropdownOpen}">
                           Additional insurance
@@ -43,53 +43,53 @@
                         </a>
                         <div class="content-div" [ngClass]="{ 'show': isSecondDropdownOpen, 'close': !isSecondDropdownOpen }">
                           <ul>
-                            <li (click)="scrollToTop()" [routerLink]="['/', selectedLanguage, 'zusatzversicherung']"><a (click)="closeAllDropdowns()" routerLinkActive="green-active" >Basic insurance</a></li>
-                            <li (click)="scrollToTop()" [routerLink]="['/', selectedLanguage, 'freiwilligekrankenpflegezusatze']"><a (click)="closeAllDropdowns()" routerLinkActive="green-active" >Voluntary nursing supplements</a></li>
-                            <li (click)="scrollToTop()" [routerLink]="['/', selectedLanguage, 'brillenundkontaktlinsen']"><a (click)="closeAllDropdowns()" routerLinkActive="green-active" >Glasses and contact lenses</a></li>
-                            <li (click)="scrollToTop()" [routerLink]="['/', selectedLanguage, 'vorsorgeuntersuchungen']"><a (click)="closeAllDropdowns()" routerLinkActive="green-active" >Preventive examinations</a></li>
-                            <li (click)="scrollToTop()" [routerLink]="['/', selectedLanguage, 'komplementaermedizin']"><a (click)="closeAllDropdowns()" routerLinkActive="green-active" >Complementary medicine</a></li>
-                            <li (click)="scrollToTop()" [routerLink]="['/', selectedLanguage, 'fitnesscenter']"><a (click)="closeAllDropdowns()" routerLinkActive="green-active" >Fitness center</a></li>
-                            <li (click)="scrollToTop()" [routerLink]="['/', selectedLanguage, 'medikamente']"><a (click)="closeAllDropdowns()" routerLinkActive="green-active" >Medication</a></li>
-                            <li (click)="scrollToTop()" [routerLink]="['/', selectedLanguage, 'rettungs-und-transportkosten']"><a (click)="closeAllDropdowns()" routerLinkActive="green-active" >Rescue and transtportation</a></li>
-                            <li (click)="scrollToTop()" [routerLink]="['/', selectedLanguage, 'auslandsschutz']"><a (click)="closeAllDropdowns()" routerLinkActive="green-active" >Foreign protection</a></li>
-                            <li (click)="scrollToTop()" [routerLink]="['/', selectedLanguage, 'psychotherapie']"><a (click)="closeAllDropdowns()" routerLinkActive="green-active" >Psychotherapy</a></li>
-                            <li (click)="scrollToTop()" [routerLink]="['/', selectedLanguage, 'zahnbehandlungen']"><a (click)="closeAllDropdowns()" routerLinkActive="green-active" >Dental treatment</a></li>
-                            <li (click)="scrollToTop()" [routerLink]="['/', selectedLanguage, 'halb-private-spitalabteilung']"><a (click)="closeAllDropdowns()" routerLinkActive="green-active" >Halb-private</a></li>
-                            <li (click)="scrollToTop()" [routerLink]="['/', selectedLanguage, 'alternativmedizin']"><a (click)="closeAllDropdowns()" routerLinkActive="green-active" >Alternative medicine</a></li>
+                            <li (click)="scrollToTop()"><a (click)="closeAllDropdowns()" routerLinkActive="green-active" >Basic insurance</a></li>
+                            <li (click)="scrollToTop()"><a (click)="closeAllDropdowns()" routerLinkActive="green-active" >Voluntary nursing supplements</a></li>
+                            <li (click)="scrollToTop()" ><a (click)="closeAllDropdowns()" routerLinkActive="green-active" >Glasses and contact lenses</a></li>
+                            <li (click)="scrollToTop()" ><a (click)="closeAllDropdowns()" routerLinkActive="green-active" >Preventive examinations</a></li>
+                            <li (click)="scrollToTop()" ><a (click)="closeAllDropdowns()" routerLinkActive="green-active" >Complementary medicine</a></li>
+                            <li (click)="scrollToTop()" ><a (click)="closeAllDropdowns()" routerLinkActive="green-active" >Fitness center</a></li>
+                            <li (click)="scrollToTop()" ><a (click)="closeAllDropdowns()" routerLinkActive="green-active" >Medication</a></li>
+                            <li (click)="scrollToTop()" ><a (click)="closeAllDropdowns()" routerLinkActive="green-active" >Rescue and transtportation</a></li>
+                            <li (click)="scrollToTop()" ><a (click)="closeAllDropdowns()" routerLinkActive="green-active" >Foreign protection</a></li>
+                            <li (click)="scrollToTop()" ><a (click)="closeAllDropdowns()" routerLinkActive="green-active" >Psychotherapy</a></li>
+                            <li (click)="scrollToTop()" ><a (click)="closeAllDropdowns()" routerLinkActive="green-active" >Dental treatment</a></li>
+                            <li (click)="scrollToTop()" ><a (click)="closeAllDropdowns()" routerLinkActive="green-active" >Halb-private</a></li>
+                            <li (click)="scrollToTop()" ><a (click)="closeAllDropdowns()" routerLinkActive="green-active" >Alternative medicine</a></li>
                           </ul>
                         </div>
                       </li>
-                      <li (click)="scrollToTop()" [routerLink]="['/', selectedLanguage, 'neu-in-der-schweiz']"><a (click)="closeAllDropdowns()" routerLinkActive="zusatz-active" >New in switzerland</a></li>
-                      <li (click)="scrollToTop()" [routerLink]="['/', selectedLanguage, 'neugeborene-babys']"><a (click)="closeAllDropdowns()" routerLinkActive="zusatz-active" >Newborn babies</a></li>
-                      <li (click)="scrollToTop()" [routerLink]="['/', selectedLanguage, 'krankenkassen-listen']"><a (click)="closeAllDropdowns()" routerLinkActive="zusatz-active" >Health insurance List</a></li>
-                      <li (click)="scrollToTop()" [routerLink]="['/', selectedLanguage, 'online-beratung']"><a (click)="closeAllDropdowns()" routerLinkActive="zusatz-active" >Online Beratung</a></li>
+                      <li (click)="scrollToTop()" ><a (click)="closeAllDropdowns()" routerLinkActive="zusatz-active" >New in switzerland</a></li>
+                      <li (click)="scrollToTop()"><a (click)="closeAllDropdowns()" routerLinkActive="zusatz-active" >Newborn babies</a></li>
+                      <li (click)="scrollToTop()" ><a (click)="closeAllDropdowns()" routerLinkActive="zusatz-active" >Health insurance List</a></li>
+                      <li (click)="scrollToTop()" ><a (click)="closeAllDropdowns()" routerLinkActive="zusatz-active" >Online Beratung</a></li>
   
                     </ul>
   
                     <div class="gray-background-2">
                       <ul class="main-menu dropdown-links-2">
-                        <li (click)="scrollToTop()" [routerLink]="['/', selectedLanguage, 'freiwilligekrankenpflegezusatze']"><a routerLinkActive="green-active" >Voluntary nursing supplements</a></li>
-                        <li (click)="scrollToTop()" [routerLink]="['/', selectedLanguage, 'brillenundkontaktlinsen']"><a routerLinkActive="green-active" >Glasses and contact lenses</a></li>
-                        <li (click)="scrollToTop()" [routerLink]="['/', selectedLanguage, 'vorsorgeuntersuchungen']"><a routerLinkActive="green-active" >Preventive examinations</a></li>
-                        <li (click)="scrollToTop()" [routerLink]="['/', selectedLanguage, 'komplementaermedizin']"><a routerLinkActive="green-active" >Complementary medicine</a></li>
-                        <li (click)="scrollToTop()" [routerLink]="['/', selectedLanguage, 'fitnesscenter']"><a routerLinkActive="green-active" >Fitness center</a></li>
-                        <li (click)="scrollToTop()" [routerLink]="['/', selectedLanguage, 'halb-private-spitalabteilung']"><a routerLinkActive="green-active" >Halb private</a></li>
+                        <li (click)="scrollToTop()"><a routerLinkActive="green-active" >Voluntary nursing supplements</a></li>
+                        <li (click)="scrollToTop()" ><a routerLinkActive="green-active" >Glasses and contact lenses</a></li>
+                        <li (click)="scrollToTop()" ><a routerLinkActive="green-active" >Preventive examinations</a></li>
+                        <li (click)="scrollToTop()" ><a routerLinkActive="green-active" >Complementary medicine</a></li>
+                        <li (click)="scrollToTop()" ><a routerLinkActive="green-active" >Fitness center</a></li>
+                        <li (click)="scrollToTop()" ><a routerLinkActive="green-active" >Halb private</a></li>
                       </ul>
                     </div>
                     <div class="gray-background">
                       <ul class="main-menu dropdown-links-3">
-                        <li (click)="scrollToTop()" [routerLink]="['/', selectedLanguage, 'medikamente']"><a routerLinkActive="green-active" >Medication</a></li>
-                        <li (click)="scrollToTop()" [routerLink]="['/', selectedLanguage, 'rettungs-und-transportkosten']"><a routerLinkActive="green-active" >Rescue and transport</a></li>
-                        <li (click)="scrollToTop()" [routerLink]="['/', selectedLanguage, 'auslandsschutz']"><a routerLinkActive="green-active" >Foreign protection</a></li>
-                        <li (click)="scrollToTop()" [routerLink]="['/', selectedLanguage, 'psychotherapie']"><a routerLinkActive="green-active" >Psychotherapy</a></li>
-                        <li (click)="scrollToTop()" [routerLink]="['/', selectedLanguage, 'zahnbehandlungen']"><a routerLinkActive="green-active" >Dental treatments</a></li>
-                        <li (click)="scrollToTop()" [routerLink]="['/', selectedLanguage, 'alternativmedizin']"><a routerLinkActive="green-active" >Alternative medicine</a></li>
+                        <li (click)="scrollToTop()" ><a routerLinkActive="green-active" >Medication</a></li>
+                        <li (click)="scrollToTop()" ><a routerLinkActive="green-active" >Rescue and transport</a></li>
+                        <li (click)="scrollToTop()"><a routerLinkActive="green-active" >Foreign protection</a></li>
+                        <li (click)="scrollToTop()" ><a routerLinkActive="green-active" >Psychotherapy</a></li>
+                        <li (click)="scrollToTop()" ><a routerLinkActive="green-active" >Dental treatments</a></li>
+                        <li (click)="scrollToTop()" ><a routerLinkActive="green-active" >Alternative medicine</a></li>
                       </ul>
                     </div>
                   </div>
                 </li>
-                <li (click)="scrollToTop()" class="nav-li"><a routerLinkActive="bold-text" [routerLink]="['/', selectedLanguage, 'kontakt']" (click)="closeDropdown()">Contact</a></li>
-                <li (click)="scrollToTop()" class="nav-li"><a routerLinkActive="bold-text" [routerLink]="['/', selectedLanguage, 'blog']" (click)="closeDropdown()">Blog</a></li>
+                <li (click)="scrollToTop()" class="nav-li"><a routerLinkActive="bold-text"  (click)="closeDropdown()">Contact</a></li>
+                <li (click)="scrollToTop()" class="nav-li"><a routerLinkActive="bold-text"  (click)="closeDropdown()">Blog</a></li>
   
   
   

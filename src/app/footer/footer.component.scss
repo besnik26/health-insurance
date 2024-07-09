@@ -138,11 +138,11 @@
             //   color: $white-color;
               font-size: 16px;
             }
-            color: #f9a2a7;
+            color: white;
             font-size: 13.28px;
 
             a {
-              color: #f9a2a7;
+              color: white;
               text-decoration: none;
             }
           }
@@ -178,7 +178,7 @@
 
       .text {
         h6 {
-          color: #f9a2a7;
+          color:white;
         }
       }
 
@@ -189,15 +189,15 @@
           list-style: none;
         //   gap: $space-md;
           mat-divider {
-            border: 1px solid #f9a2a7;
+            border: 1px solid white;
           }
           li {
-            font-size: 11.5px;
-            color: #f9a2a7;
+            font-size: 11.5px;  
+            color: white;
 
             a {
               font-size: 11.5px;
-              color: #f9a2a7;
+              color: white;
               text-decoration: none;
             }
           }

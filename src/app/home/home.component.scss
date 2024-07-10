@@ -47,6 +47,7 @@
 .services{
     display: flex;
     justify-content: center;
+    margin-top: 80px;
    .services-div{
         display: flex;
         flex-direction: column;
@@ -55,7 +56,7 @@
             text-align: center;
             width: 100%;
             p{
-                margin: 5px 0 20px 0;
+                margin: 5px 0 25px 0;
             }
         }
     
@@ -64,14 +65,31 @@
             flex-wrap: wrap;
             justify-content: center;
             max-width: 1000px;
-            column-gap: 30px;
-            row-gap: 30px;
+            column-gap: 25px;
+            row-gap: 25px;
             width: 100%;
     
             .card{
-                width: 300px;
-                height: 340px;
+                width: 280px;
+                height: 270px;
+                background-color: white;
+                border: 1px solid ;
+                border-radius: 16px;
+                transition: all 0.2s;
+                cursor: pointer;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                .card-img{
+                    display: flex;
+                    justify-content: center;
+                    height: 75px;
+                    width: 75px;
+                    margin-bottom: 15px;
+                }
             }
+
         }
     }
     

@@ -7,7 +7,7 @@
 .main{
     display: flex;
     justify-content: center;
-    padding: 200px 0 180px 0;
+    padding: 200px 0 160px 0;
     background-color: #fbfcfe;
     .hero{
         display: flex;
@@ -150,4 +150,44 @@
         }
     }
     
+}
+
+.family{
+    display: flex;
+    justify-content: center;
+    margin-top: 80px;
+    .family-section{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        column-gap: 80px;
+        .photo-section{
+            max-width: 450px;
+            position: relative;
+            width: 100%;
+            height: 400px;
+            .photo-1{
+                max-width: 300px;
+                position: absolute;
+                top: 0;
+                right: 0;
+                z-index: 2;
+            }
+            .photo-2{
+                max-width: 300px;
+                position: absolute;
+                left: 0;
+                bottom: 0;
+                z-index: 1;
+
+            }
+            img{
+                width: 100%;
+                border-radius: 16px;
+            }
+        }
+        .text-section{
+            max-width: 600px;
+        }
+    }
 }

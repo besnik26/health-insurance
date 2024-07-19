@@ -6,10 +6,30 @@
                     <h3>Form</h3>
 
                     <div class="insurance-type">
-                        <label for="insurance-health"><div class="radio-input"><input type="radio" id="insurance-health"><label>Health insurance</label></div></label>
-                        <label for="insurance-provision"><div class="radio-input"><input type="radio" id="insurance-provision"><label>Provision</label></div></label>
-                        <label for="insurance-legal"><div class="radio-input"><input type="radio" id="insurance-legal"><label>Legal protection</label></div></label>
-                        <label for="insurance-car"><div class="radio-input"><input type="radio" id="insurance-car"><label>Car insurance</label></div></label>
+                        <label for="insurance-health">
+                            <div class="radio-input">
+                                <input type="radio" value="health" name="insuranceType" formControlName="insuranceType" id="insurance-health">
+                                <label for="insurance-health">Health insurance</label>
+                            </div>
+                        </label>
+                        <label for="insurance-provision">
+                            <div class="radio-input">
+                                <input type="radio" value="provision" name="insuranceType" formControlName="insuranceType" id="insurance-provision">
+                                <label for="insurance-provision">Provision</label>
+                            </div>
+                        </label>
+                        <label for="insurance-legal">
+                            <div class="radio-input">
+                                <input type="radio" value="legal" name="insuranceType" formControlName="insuranceType" id="insurance-legal">
+                                <label for="insurance-legal">Legal protection</label>
+                            </div>
+                        </label>
+                        <label for="insurance-car">
+                            <div class="radio-input">
+                                <input type="radio" value="car" name="insuranceType" formControlName="insuranceType" id="insurance-car">
+                                <label for="insurance-car">Car insurance</label>
+                            </div>
+                        </label>
                     </div>
                 </form>
                 

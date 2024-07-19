@@ -117,7 +117,8 @@
                 }
 
                 &:hover{
-                    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;                    
+                    // box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;   
+                    box-shadow: rgba(40 214 44 / 24%) 0px 3px 14px;                 
                     h3{
                         color: #8CC540;
                         transition: all 0.4s;

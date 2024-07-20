@@ -35,7 +35,7 @@ export class GlobalFormComponent {
       insuranceType:['',Validators.required],
       fullName:['', Validators.required],
       email:['', Validators.required],
-      terms:['',Validators.required]
+      terms:['',Validators.requiredTrue]
     })
   }
 

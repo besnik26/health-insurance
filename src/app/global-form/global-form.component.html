@@ -31,24 +31,36 @@
                             </div>
                         </label>
                     </div>
+                    @if (myForm.get('insuranceType')?.touched && myForm.get('insuranceType')?.invalid) {
+                        <small>This field is required</small>
+                    }
 
 
 
                     <div class="single-input">
                         <span>Name & surname</span>
                         <input type="text" formControlName="fullName">
+                        @if (myForm.get('fullName')?.touched && myForm.get('fullName')?.invalid) {
+                            <small>This field is required</small>
+                        }
                     </div>
 
 
                     <div class="single-input">
                         <span>Email</span>
                         <input type="email" formControlName="email">
+                        @if (myForm.get('email')?.touched && myForm.get('email')?.invalid) {
+                            <small>This field is required</small>
+                        }
                     </div>
 
 
                     <div class="terms">
                         <input id="terms" type="checkbox" formControlName="terms">
                         <label for="terms">I have read the Privacy policy and I agreed with it.</label>
+                        @if (myForm.get('terms')?.touched && myForm.get('terms')?.invalid) {
+                            <small>This field is required</small>
+                        }
 
                     </div>
 

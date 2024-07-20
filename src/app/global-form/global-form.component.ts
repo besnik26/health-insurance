@@ -32,7 +32,10 @@ export class GlobalFormComponent {
   private buildForm(){
     const emailPattern = /^[-!#$%&'*+/=?^_`{|}~A-Za-z0-9]+(?:\.[-!#$%&'*+/=?^_`{|}~A-Za-z0-9]+)*@([A-Za-z0-9]([A-Za-z0-9-]*[A-Za-z0-9])?\.)+[A-Za-z0-9][A-Za-z0-9-]*[A-Za-z0-9]$/;
     this.myForm = this.formBuilder.group({
-      insuranceType:['',Validators.required]
+      insuranceType:['',Validators.required],
+      fullName:['', Validators.required],
+      email:['', Validators.required],
+      terms:['',Validators.required]
     })
   }
 

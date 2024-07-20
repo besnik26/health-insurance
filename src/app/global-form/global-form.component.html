@@ -3,42 +3,67 @@
         <div class="form-section">
             <div class="form-div">
                 <form [formGroup]="myForm">
-                    <h3>Form</h3>
+                    <h3 class="text-center">Choose your insurance</h3>
 
                     <div class="insurance-type">
-                        <label for="insurance-health">
+                        <label class="cover-label" for="insurance-health">
                             <div class="radio-input">
                                 <input type="radio" value="health" name="insuranceType" formControlName="insuranceType" id="insurance-health">
                                 <label for="insurance-health">Health insurance</label>
                             </div>
                         </label>
-                        <label for="insurance-provision">
+                        <label class="cover-label" for="insurance-provision">
                             <div class="radio-input">
                                 <input type="radio" value="provision" name="insuranceType" formControlName="insuranceType" id="insurance-provision">
                                 <label for="insurance-provision">Provision</label>
                             </div>
                         </label>
-                        <label for="insurance-legal">
+                        <label class="cover-label" for="insurance-legal">
                             <div class="radio-input">
                                 <input type="radio" value="legal" name="insuranceType" formControlName="insuranceType" id="insurance-legal">
                                 <label for="insurance-legal">Legal protection</label>
                             </div>
                         </label>
-                        <label for="insurance-car">
+                        <label class="cover-label" for="insurance-car">
                             <div class="radio-input">
                                 <input type="radio" value="car" name="insuranceType" formControlName="insuranceType" id="insurance-car">
                                 <label for="insurance-car">Car insurance</label>
                             </div>
                         </label>
                     </div>
+
+
+
+                    <div class="single-input">
+                        <span>Name & surname</span>
+                        <input type="text" formControlName="fullName">
+                    </div>
+
+
+                    <div class="single-input">
+                        <span>Email</span>
+                        <input type="email" formControlName="email">
+                    </div>
+
+
+                    <div class="terms">
+                        <input id="terms" type="checkbox" formControlName="terms">
+                        <label for="terms">I have read the Privacy policy and I agreed with it.</label>
+
+                    </div>
+
+                    <div class="button-container">
+                        <button type="button">Submit</button>
+                    </div>
+
                 </form>
                 
             </div>
             <div class="form-text">
                 <ul>
-                    <li>form text</li>
-                    <li>form text</li>
-                    <li>form text</li>
+                    <li>form info</li>
+                    <li>form info</li>
+                    <li>form info</li>
                 </ul>
             </div>
         </div>

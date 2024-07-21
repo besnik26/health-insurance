@@ -39,4 +39,19 @@ export class GlobalFormComponent {
     })
   }
 
+
+  onSubmit(){
+    if(this.myForm.valid){
+      console.log(this.myForm.value)
+    }else{
+      this.markFormGroupTouched(this.myForm);
+    }
+  }
+
+  markFormGroupTouched(formGroup:FormGroup){
+    Object.values(formGroup.controls).forEach(control =>{
+      control.markAsTouched();
+    })
+  }
+
 }

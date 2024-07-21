@@ -7,25 +7,29 @@
 
                     <div class="insurance-type">
                         <label class="cover-label" for="insurance-health">
-                            <div class="radio-input">
+                            <div class="radio-input" [ngClass]="{'valid-radio': myForm.get('insuranceType')?.value === 'health'}">
+                                <div class="icon-div icon-health" [ngClass]="{'health-valid': myForm.get('insuranceType')?.value === 'health'}"></div>
                                 <input type="radio" value="health" name="insuranceType" formControlName="insuranceType" id="insurance-health">
                                 <label for="insurance-health">Health insurance</label>
                             </div>
                         </label>
                         <label class="cover-label" for="insurance-provision">
-                            <div class="radio-input">
+                            <div class="radio-input" [ngClass]="{'valid-radio': myForm.get('insuranceType')?.value === 'provision'}">
+                                <div class="icon-div icon-provision" [ngClass]="{'provision-valid': myForm.get('insuranceType')?.value === 'provision'}"></div>
                                 <input type="radio" value="provision" name="insuranceType" formControlName="insuranceType" id="insurance-provision">
                                 <label for="insurance-provision">Provision</label>
                             </div>
                         </label>
                         <label class="cover-label" for="insurance-legal">
-                            <div class="radio-input">
+                            <div class="radio-input" [ngClass]="{'valid-radio': myForm.get('insuranceType')?.value === 'legal'}">
+                                <div class="icon-div icon-legal" [ngClass]="{'legal-valid': myForm.get('insuranceType')?.value === 'legal'}"></div>
                                 <input type="radio" value="legal" name="insuranceType" formControlName="insuranceType" id="insurance-legal">
                                 <label for="insurance-legal">Legal protection</label>
                             </div>
                         </label>
                         <label class="cover-label" for="insurance-car">
-                            <div class="radio-input">
+                            <div class="radio-input" [ngClass]="{'valid-radio': myForm.get('insuranceType')?.value === 'car'}">
+                                <div class="icon-div icon-car" [ngClass]="{'car-valid': myForm.get('insuranceType')?.value === 'car'}"></div>
                                 <input type="radio" value="car" name="insuranceType" formControlName="insuranceType" id="insurance-car">
                                 <label for="insurance-car">Car insurance</label>
                             </div>
@@ -58,14 +62,13 @@
                     <div class="terms">
                         <input id="terms" type="checkbox" formControlName="terms">
                         <label for="terms">I have read the Privacy policy and I agreed with it.</label>
-                        @if (myForm.get('terms')?.touched && myForm.get('terms')?.invalid) {
-                            <small>This field is required</small>
-                        }
-
                     </div>
+                    @if (myForm.get('terms')?.touched && myForm.get('terms')?.invalid) {
+                        <small>This field is required</small>
+                    }
 
                     <div class="button-container">
-                        <button type="button">Submit</button>
+                        <button type="button" (click)="onSubmit()">Submit</button>
                     </div>
 
                 </form>

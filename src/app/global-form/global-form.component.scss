@@ -3,7 +3,16 @@
 .container{
     max-width: 1268px; 
 }
-
+small{
+    color: red;
+    font-size: 12px;
+}
+.valid-radio{
+    border: 1px solid #8CC540!important;
+    label{
+        color: #8CC540!important;
+    }
+}
 .form{
     margin: 150px 0 150px 0;
     display: flex;
@@ -26,7 +35,7 @@
                 column-gap: 16px;
                 row-gap: 16px;
                 flex-wrap: wrap;
-                margin: 10px 0 10px 0;
+                margin: 10px 0 0 0;
                 .cover-label{
                     max-width: 199px;
                     width: 100%;
@@ -45,12 +54,47 @@
                         margin-left: 5px;
                         color: #a5a5a5;
                     }
-                   
+                    input{
+                        display: none;
+                    }
+                    .icon-div{
+                        width: 25px;
+                        height: 25px;
+                        background-size: contain;
+                        background-position: center;
+                        background-repeat: no-repeat;
+                    }
+                    .icon-health{
+                        background-image: url(../../assets/images/global-form/health-icon.svg);
+                    }
+                    .health-valid{
+                        background-image: url(../../assets/images/global-form/health-icon-v.svg)!important;
+                    }
+                    .icon-provision{
+                        background-image: url(../../assets/images/global-form/provision-icon.svg);
+                    }
+                    .provision-valid{
+                        background-image: url(../../assets/images/global-form/provision-icon-v.svg)!important;
+                    }
+                    .icon-legal{
+                        background-image: url(../../assets/images/global-form/legal-icon.svg);
+                    }
+                    .legal-valid{
+                        background-image: url(../../assets/images/global-form/legal-icon-v.svg)!important;
+                    }
+                    .icon-car{
+                        background-image: url(../../assets/images/global-form/car-icon.svg);
+                    }
+                    .car-valid{
+                        background-image: url(../../assets/images/global-form/car-icon-v.svg)!important;
+                    }
                 }
             }
+           
             .single-input{
                 display: flex;
                 flex-direction: column;
+                margin-top: 10px;
                 input{
                     // border: 1px solid black;
                     border: 1px solid #e8e8e8;
@@ -69,14 +113,14 @@
             .terms{
                 display: flex;
                 align-items: center;
-                margin: 10px 0 10px 0;                
+                margin: 10px 0 0 0;                
                 input{
                     height: 15px;
                     width: 15px;
                 }
                 label{
                     margin-left: 5px;
-                    font-size: 14px;
+                    font-size: 13px;
                 }
             }
 
@@ -84,6 +128,7 @@
                 width: 100%;
                 display: flex;
                 justify-content: center;
+                margin-top: 20px;
                 button{
                     height: 40px;
                     border-radius: 16px;

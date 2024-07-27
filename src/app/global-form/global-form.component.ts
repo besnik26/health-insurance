@@ -8,6 +8,7 @@ import {
   Validators
 } from "@angular/forms";
 import { RouterLink } from '@angular/router';
+import { PhoneNumberInputComponent } from '../share/phone-number-input/phone-number-input.component';
 
 @Component({
   selector: 'app-global-form',
@@ -16,7 +17,8 @@ import { RouterLink } from '@angular/router';
     ReactiveFormsModule,
     NgClass,
     NgStyle,
-    RouterLink
+    RouterLink,
+    PhoneNumberInputComponent
   ],
   templateUrl: './global-form.component.html',
   styleUrl: './global-form.component.scss'

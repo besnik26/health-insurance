@@ -1,0 +1,3 @@
+<div class="input-container">
+    <input type="text" #phoneInput  autocomplete="disabled" [formControl]="phone" maxlength="20" (keydown)="preventNonNumericInput($event)">
+</div>

@@ -19,23 +19,25 @@ import { TranslateModule } from '@ngx-translate/core';
   ]
 })
 export class PhoneNumberInputComponent implements AfterViewInit, ControlValueAccessor{
-  phone:FormControl = new FormControl('',[Validators.required, ])
+  
+  phone: FormControl = new FormControl('', [Validators.required, this.validatePhoneNumber.bind(this)]);
   @ViewChild('phoneInput') phoneInput!: ElementRef;
   iti: any;
   @Input() index!: number;
-  @Input() isFormSubmitted:boolean = false;
+  @Input() isFormSubmitted: boolean = false;
   @Output() phoneTouched = new EventEmitter<void>();
 
-  ngAfterViewInit(): void {
-    
+  ngAfterViewInit() {
+    this.initizalizeTelInput()
   }
 
 
-  initializeTelInput(){
+
+  initizalizeTelInput() {
     const input = this.phoneInput?.nativeElement;
 
     const options = {
-      utilsScript:"https://cdn.jsdelivr.net/npm/intl-tel-input@19.5.6/build/js.utils.js",
+      utilsScript: "https://cdn.jsdelivr.net/npm/intl-tel-input@19.5.6/build/js/utils.js",
       initialCountry: "ch",
       useFullscreenPopup: false,
       showSelectedDialCode: true
@@ -43,10 +45,9 @@ export class PhoneNumberInputComponent implements AfterViewInit, ControlValueAcc
 
     this.iti = intlTelInput(input, options);
 
-    input.addEventListener('countrychange', ()=>{
+    input.addEventListener('countrychange', () => {
       this.phone.updateValueAndValidity();
-    })
-
+    });
   }
 
 

@@ -19,6 +19,15 @@
 
 // @import "../../../styles/utils/index";
 
+@import '../../../styles/index.scss';
+
+
+.input-container{
+  margin-top: 10px;
+  span{
+    font-size: 13px;
+  }
+}
 
 .error-message {
   color: red;
@@ -171,10 +180,10 @@
 
   .iti input {
     width: 100%;
-    height: 46px;
-    border-radius: 32px;
-    border: 1px solid #D0DEEF;
-    background-color: white;
+    height: 40px;
+    border-radius: 16px;
+    border: 1px solid #e8e8e8;
+    background-color: #fafafa;
     outline: none;
     font-size: 16px;
     font-weight: 500;

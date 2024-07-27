@@ -1,3 +1,7 @@
 <div class="input-container">
+    <span>Name & surname</span>
     <input type="text" #phoneInput  autocomplete="disabled" [formControl]="phone" maxlength="20" (keydown)="preventNonNumericInput($event)">
+    @if (phone.touched && phone.invalid) {
+        <small>This field is required</small>
+    }
 </div>

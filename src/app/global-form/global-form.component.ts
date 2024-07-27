@@ -1,5 +1,5 @@
 import { NgClass, NgStyle } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import {
   AbstractControl,
   FormBuilder,
@@ -26,6 +26,7 @@ import { PhoneNumberInputComponent } from '../share/phone-number-input/phone-num
 export class GlobalFormComponent {
 
   myForm!:FormGroup;
+  @ViewChild(PhoneNumberInputComponent) phoneInputComponent!: PhoneNumberInputComponent;
   constructor(private formBuilder: FormBuilder,){
     this.buildForm();
   }
@@ -37,13 +38,14 @@ export class GlobalFormComponent {
       insuranceType:['',Validators.required],
       fullName:['', Validators.required],
       email:['', Validators.required],
+      phone:['',Validators.required],
       terms:['',Validators.requiredTrue]
     })
   }
 
 
   onSubmit(){
-    if(this.myForm.valid){
+    if(this.myForm.valid && this.phoneInputComponent?.phone.valid){
       console.log(this.myForm.value)
     }else{
       this.markFormGroupTouched(this.myForm);
@@ -53,6 +55,7 @@ export class GlobalFormComponent {
   markFormGroupTouched(formGroup:FormGroup){
     Object.values(formGroup.controls).forEach(control =>{
       control.markAsTouched();
+      this.phoneInputComponent.phone.markAsTouched();
     })
   }
 

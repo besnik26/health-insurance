@@ -1,8 +1,10 @@
-import { Component, forwardRef, ViewChild, ElementRef, AfterViewInit, Input, Output, EventEmitter } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { Component, forwardRef, ViewChild, ElementRef, AfterViewInit, Input, Output, EventEmitter } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR, FormControl, ReactiveFormsModule, Validators, ValidationErrors } from '@angular/forms';
-import intlTelInput from 'intl-tel-input';
 import { TranslateModule } from '@ngx-translate/core';
+import intlTelInput from 'intl-tel-input';
+
+
 
 @Component({
   selector: 'app-phone-number-input',
@@ -13,7 +15,7 @@ import { TranslateModule } from '@ngx-translate/core';
   providers:[
     {
       provide: NG_VALUE_ACCESSOR,
-      useExisting:forwardRef(() => PhoneNumberInputComponent),
+      useExisting: forwardRef(() => PhoneNumberInputComponent),
       multi:true
     }
   ]
@@ -33,14 +35,16 @@ export class PhoneNumberInputComponent implements AfterViewInit, ControlValueAcc
 
 
 
+
   initizalizeTelInput() {
     const input = this.phoneInput?.nativeElement;
 
     const options = {
       utilsScript: "https://cdn.jsdelivr.net/npm/intl-tel-input@19.5.6/build/js/utils.js",
-      initialCountry: "ch",
+      initialCountry: "-",
       useFullscreenPopup: false,
-      showSelectedDialCode: true
+      separateDialCode:true
+
     };
 
     this.iti = intlTelInput(input, options);

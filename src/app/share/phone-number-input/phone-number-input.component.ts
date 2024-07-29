@@ -40,11 +40,11 @@ export class PhoneNumberInputComponent implements AfterViewInit, ControlValueAcc
     const input = this.phoneInput?.nativeElement;
 
     const options = {
-      utilsScript: "https://cdn.jsdelivr.net/npm/intl-tel-input@19.5.6/build/js/utils.js",
-      initialCountry: "-",
+      utilsScript: "https://cdn.jsdelivr.net/npm/intl-tel-input@23.7.3/build/js/utils.js",
+      initialCountry: "xk",
       useFullscreenPopup: false,
-      separateDialCode:true
-
+      separateDialCode:true,
+      customPlacholder:''
     };
 
     this.iti = intlTelInput(input, options);

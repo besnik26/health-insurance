@@ -43,7 +43,7 @@
 
                     <div class="single-input">
                         <span>Name & surname</span>
-                        <input type="text" formControlName="fullName">
+                        <input type="text" formControlName="fullName" [ngClass]="{'valid-radio': myForm.get('fullName')?.valid}">
                         @if (myForm.get('fullName')?.touched && myForm.get('fullName')?.invalid) {
                             <small>This field is required</small>
                         }
@@ -52,7 +52,7 @@
 
                     <div class="single-input">
                         <span>Email</span>
-                        <input type="email" formControlName="email">
+                        <input type="email" formControlName="email" [ngClass]="{'valid-radio': myForm.get('email')?.valid}">
                         @if (myForm.get('email')?.touched && myForm.get('email')?.invalid) {
                             <small>This field is required</small>
                         }
@@ -60,6 +60,7 @@
 
 
                     <app-phone-number-input formControlName="phone"></app-phone-number-input>
+                
 
 
                     <div class="terms">

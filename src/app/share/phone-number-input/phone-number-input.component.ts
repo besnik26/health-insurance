@@ -44,7 +44,7 @@ export class PhoneNumberInputComponent implements AfterViewInit, ControlValueAcc
       initialCountry: "xk",
       useFullscreenPopup: false,
       separateDialCode:true,
-      customPlacholder:''
+      autoPlaceholder:"off"
     };
 
     this.iti = intlTelInput(input, options);

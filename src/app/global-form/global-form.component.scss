@@ -147,10 +147,12 @@ small{
             border-radius: 16px;
             max-width: 550px;
             ul{
+                // margin-top: 10px;
                 list-style: none;
                 li{
                     display: flex;
                     align-items: center;
+                    margin: 5px 0;
                     .img-div{
                         max-height: 55px;
                         max-width: 55px;
@@ -163,7 +165,11 @@ small{
                         background-color: white;
                         border-radius: 16px;
                     }
+
                 }
+            }
+            h2{
+                margin-bottom: 5px;
             }
         }
     }

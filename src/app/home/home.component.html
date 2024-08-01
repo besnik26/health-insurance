@@ -1,23 +1,9 @@
-<section class="container-fluid main">
-    <div class="container">
-        <div class="hero">
-            <div class="text-div">
-                <h1>Your independent partner for insurance solutions</h1>
-                <p>
-                    Health insurance is your partner in matters of insurance and financing. 
-                    You can rely on us if you have any questions about health insurance, pension plans or legal protection. 
-                    Whether you are a corporate or private customer - our experts will advise you in the best possible way and find the right solution.
-                </p>
-                <button>
-                    Get offer now
-                </button>
-            </div>
-            <div class="img-div">
-                <img src="../../assets/images/home/hero-insurance-img.svg" alt="besnik-beka">
-            </div>
-        </div>
-    </div>
-</section>
+<app-global-header
+    title="Your independent partner for insurance solutions"
+    description="Health insurance is your partner in matters of insurance and financing. You can rely on us if you have any questions about health insurance, pension plans or legal protection. Whether you are a corporate or private customer - our experts will advise you in the best possible way and find the right solution."
+    imgSrc="../../assets/images/home/hero-insurance-img.svg"
+></app-global-header>
+
 
 
 <section class="container-fluid services">
@@ -30,19 +16,19 @@
                 </p>  
             </div>   
             <div class="services-cards">
-                <div class="card">
+                <div class="card" [routerLink]="['/', selectedLanguage, 'health-insurance']">
                     <div class="card-img health">
                     </div>
 
                     <h3>Health insurance</h3>
                 </div>
-                <div class="card">
+                <div class="card" [routerLink]="['/', selectedLanguage, 'provision']">
                     <div class="card-img provision">
                     </div>
 
                     <h3>Provision</h3>
                 </div>
-                <div class="card">
+                <div class="card" [routerLink]="['/', selectedLanguage, 'legal-insurance']">
                     <div class="card-img legal">
                     </div>
 
@@ -54,13 +40,13 @@
 
                     <h3>Car insurance</h3>
                 </div>
-                <div class="card">
+                <div class="card" [routerLink]="['/', selectedLanguage, 'pet-insurance']">
                     <div class="card-img pet">
                     </div>
 
                     <h3>Pet insurance</h3>
                 </div>
-                <div class="card">
+                <div class="card" [routerLink]="['/', selectedLanguage, 'company-insurance']">
                     <div class="card-img company">
                     </div>
 
@@ -72,7 +58,6 @@
         
     </div>
 </section>
-<!-- [routerLink]="['/','en/', 'car-insurance']" -->
 
 <app-global-form></app-global-form>
 

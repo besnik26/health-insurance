@@ -2,12 +2,12 @@ import { Component } from '@angular/core';
 import { GlobalHeaderComponent } from '../share/global-header/global-header.component';
 
 @Component({
-  selector: 'app-car-insurance',
+  selector: 'app-company-insurance',
   standalone: true,
   imports: [GlobalHeaderComponent],
-  templateUrl: './car-insurance.component.html',
-  styleUrl: './car-insurance.component.scss'
+  templateUrl: './company-insurance.component.html',
+  styleUrl: './company-insurance.component.scss'
 })
-export class CarInsuranceComponent {
+export class CompanyInsuranceComponent {
 
 }

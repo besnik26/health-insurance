@@ -22,4 +22,15 @@ selectedLanguage:string = 'en';
     })
   
   }
+
+
+  scrollToTop() {
+    if (this.isBrowser()) {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  }
+
+  private isBrowser(): boolean {
+    return typeof window !== 'undefined';
+  }
 }

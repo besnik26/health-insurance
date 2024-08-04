@@ -26,9 +26,11 @@ import { FormModel } from '../models/form.model';
 export class GlobalFormComponent implements OnInit, AfterViewInit{
 
   myForm!:FormGroup;
+  carFormGroup!:FormGroup;
   @ViewChild(PhoneNumberInputComponent) phoneInputComponent!: PhoneNumberInputComponent;
   constructor(private formBuilder: FormBuilder,){
     this.buildForm();
+    this.buildCarForm();
   }
 
 
@@ -39,7 +41,14 @@ export class GlobalFormComponent implements OnInit, AfterViewInit{
       fullName:['', Validators.required],
       email:['', [Validators.required, Validators.email, Validators.pattern(emailPattern)]],
       phone:['',Validators.required],
-      terms:['',Validators.requiredTrue]
+      terms:['',Validators.requiredTrue], 
+     
+    })
+  }
+  private buildCarForm(){
+    this.carFormGroup = this.formBuilder.group({
+      carBrand:['',Validators.required],
+      marketPlacing:['',Validators.required]
     })
   }
 
@@ -52,12 +61,15 @@ export class GlobalFormComponent implements OnInit, AfterViewInit{
   }
   getData(){
     const formData = this.myForm.value;
+    const carData = this.carFormGroup.value;
     return new FormModel({
       fullName: formData.fullName,
       email: formData.email,
       mobile: this.phoneInputComponent.getFullNumber(),
-      insuranceType: formData.inuranceType,
-      terms: formData.terms
+      insuranceType: formData.insuranceType,
+      terms: formData.terms,
+      carBrand:carData.carBrand,
+      carPlacing:carData.marketPlacing
     });
   }
 
@@ -66,7 +78,7 @@ export class GlobalFormComponent implements OnInit, AfterViewInit{
     if(this.myForm.valid  && this.phoneInputComponent?.phone.valid){
       const modelData = this.getData();    
       console.log(modelData);
-      console.log(this.phoneInputComponent.iti.getFullNumber())
+      
     }
     else{
       this.markFormGroupTouched(this.myForm);

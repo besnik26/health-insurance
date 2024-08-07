@@ -27,10 +27,13 @@ export class GlobalFormComponent implements OnInit, AfterViewInit{
 
   myForm!:FormGroup;
   carFormGroup!:FormGroup;
+  provisionFormGroup!:FormGroup;
+
   @ViewChild(PhoneNumberInputComponent) phoneInputComponent!: PhoneNumberInputComponent;
   constructor(private formBuilder: FormBuilder,){
     this.buildForm();
     this.buildCarForm();
+    this.buildProvisionForm();
   }
 
 
@@ -51,6 +54,12 @@ export class GlobalFormComponent implements OnInit, AfterViewInit{
       marketPlacing:['',Validators.required]
     })
   }
+  private buildProvisionForm(){
+    this.provisionFormGroup = this.formBuilder.group({
+      reason:['',Validators.required],
+      investmentPerMonth:['',Validators.required]
+    })
+  }
 
 
   ngAfterViewInit(): void {
@@ -59,7 +68,7 @@ export class GlobalFormComponent implements OnInit, AfterViewInit{
   ngOnInit(): void {
     
   }
-  getData(){
+  getDataCar(){
     const formData = this.myForm.value;
     const carData = this.carFormGroup.value;
     return new FormModel({
@@ -73,12 +82,40 @@ export class GlobalFormComponent implements OnInit, AfterViewInit{
     });
   }
 
+  getDataProvision(){
+    const formData = this.myForm.value;
+    const provisionData = this.provisionFormGroup.value;
+    return new FormModel({
+      fullName: formData.fullName,
+      email: formData.email,
+      mobile: this.phoneInputComponent.getFullNumber(),
+      insuranceType: formData.insuranceType,
+      terms: formData.terms,
+      provisionReason: provisionData.reason,
+      provisionInvestmentPerMonth: provisionData.investmentPerMonth
+    });
+  }
+
+  private cleanObject(obj: { [key: string]: any }): { [key: string]: any } {
+    return Object.keys(obj).reduce((acc, key) => {
+      if (obj[key] !== undefined) {
+        acc[key] = obj[key];
+      }
+      return acc;
+    }, {} as { [key: string]: any });
+  }
+
 
   onSubmit(){
     if(this.myForm.valid  && this.phoneInputComponent?.phone.valid){
-      const modelData = this.getData();    
-      console.log(modelData);
-      
+      if(this.myForm.get('insuranceType')?.value === 'car'){
+        const modelData = this.getDataCar();    
+        console.log(this.cleanObject(modelData));
+      }
+      else if(this.myForm.get('insuranceType')?.value === 'provision'){
+        const modelData = this.getDataProvision();    
+        console.log(this.cleanObject(modelData));
+      }
     }
     else{
       this.markFormGroupTouched(this.myForm);

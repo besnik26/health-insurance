@@ -4,8 +4,10 @@ export class FormModel {
     public email?: string;
     public mobile?: string;
     public terms?: boolean;
-    public carBrand?:boolean;
-    public carPlacing?:boolean;
+    public carBrand?:string;
+    public carPlacing?:string;
+    public provisionReason?:string;
+    public provisionInvestmentPerMonth?:string;
   
       constructor(data: {
         insuranceType?:string,
@@ -13,8 +15,11 @@ export class FormModel {
         email?: string,
         mobile?:string,
         terms?:boolean,
-        carBrand?:boolean
-        carPlacing?:boolean
+        carBrand?:string,
+        carPlacing?:string,
+        provisionReason?:string,
+        provisionInvestmentPerMonth?:string
+
         }) {
         this.insuranceType = data.insuranceType;
         this.fullName = data.fullName;
@@ -23,5 +28,7 @@ export class FormModel {
         this.terms = data.terms;
         this.carBrand = data.carBrand;
         this.carPlacing = data.carPlacing;
+        this.provisionReason = data.provisionReason;
+        this.provisionInvestmentPerMonth = data.provisionInvestmentPerMonth;
     }  
 }

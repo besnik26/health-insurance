@@ -67,6 +67,10 @@ export class GlobalFormComponent implements OnInit, AfterViewInit{
   }
   ngOnInit(): void {
     
+    this.myForm.get('insuranceType')?.valueChanges.subscribe((selectedType) => {
+      this.handleInsuranceTypeChange(selectedType);
+    });
+    
   }
   getDataCar(){
     const formData = this.myForm.value;
@@ -105,6 +109,14 @@ export class GlobalFormComponent implements OnInit, AfterViewInit{
     }, {} as { [key: string]: any });
   }
 
+
+  private handleInsuranceTypeChange(selectedType: string): void {
+    if (selectedType === 'car') {
+      this.provisionFormGroup.reset();
+    } else if (selectedType === 'provision') {
+      this.carFormGroup.reset();
+    }
+  }
 
   onSubmit(){
     if(this.myForm.valid  && this.phoneInputComponent?.phone.valid){

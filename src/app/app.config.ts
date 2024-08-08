@@ -9,6 +9,7 @@ import { HTTP_INTERCEPTORS, HttpClient, HttpClientModule, provideHttpClient, wit
 import { provideAnimations } from '@angular/platform-browser/animations';
 
 import { routes } from './app.routes';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 
 
 export function HttpLoaderFactory(http: HttpClient) {
@@ -34,6 +35,6 @@ export const appConfig: ApplicationConfig = {
     importProvidersFrom([
       HttpClientModule,
       TranslateModule.forRoot(provideTranslation()),
-    ]),
+    ]), provideAnimationsAsync(),
   ]
 };

@@ -7,6 +7,9 @@ small{
     color: red;
     font-size: 12px;
 }
+.margin-t-15{
+    margin-top: 15px;
+}
 .valid-radio{
     border: 1px solid #8CC540!important;
     label{
@@ -95,7 +98,7 @@ small{
                 display: flex;
                 justify-content: center;
                 column-gap: 16px;
-                margin-top: 15px;
+                // margin-top: 15px;
                
             }
             .single-input{

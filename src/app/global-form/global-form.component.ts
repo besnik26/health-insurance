@@ -28,12 +28,16 @@ export class GlobalFormComponent implements OnInit, AfterViewInit{
   myForm!:FormGroup;
   carFormGroup!:FormGroup;
   provisionFormGroup!:FormGroup;
+  legalFormGroup!:FormGroup;
+  healthFormGroup!:FormGroup;
 
   @ViewChild(PhoneNumberInputComponent) phoneInputComponent!: PhoneNumberInputComponent;
   constructor(private formBuilder: FormBuilder,){
     this.buildForm();
     this.buildCarForm();
     this.buildProvisionForm();
+    this.buildLegalForm();
+    this.buildHealthForm();
   }
 
 
@@ -58,6 +62,19 @@ export class GlobalFormComponent implements OnInit, AfterViewInit{
     this.provisionFormGroup = this.formBuilder.group({
       reason:['',Validators.required],
       investmentPerMonth:['',Validators.required]
+    })
+  }
+  private buildLegalForm(){
+    this.legalFormGroup = this.formBuilder.group({
+      individualOrFamily:['',Validators.required],
+      coverage:['',Validators.required]
+    })
+  }
+
+  private buildHealthForm(){
+    this.healthFormGroup = this.formBuilder.group({
+      insurance:['',Validators.required],
+      franchise:['',Validators.required]
     })
   }
 

@@ -30,6 +30,7 @@ selectedLanguage:string = 'en';
     }
   }
 
+ 
   private isBrowser(): boolean {
     return typeof window !== 'undefined';
   }

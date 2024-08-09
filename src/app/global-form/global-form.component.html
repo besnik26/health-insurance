@@ -111,6 +111,31 @@
                         </form>
                     }
 
+                    @if (myForm.get('insuranceType')?.value ==='health') {
+                        <form [formGroup]="healthFormGroup">
+                            <div class="double-input margin-t-15">
+                                <div class="single-input">
+                                    <span>Insurance</span>
+                                    <mat-form-field>
+                                        <mat-label>Please select</mat-label>
+                                        <mat-select>
+                                          @for (food of foods; track food) {
+                                            <mat-option [value]="food.value">{{food.viewValue}}</mat-option>
+                                          }
+                                        </mat-select>
+                                      </mat-form-field>
+                                </div>
+                                <div class="single-input">
+                                    <span>Franchise</span>
+                                    <input type="text" formControlName="franchise" [ngClass]="{'valid-radio': healthFormGroup.get('franchise')?.valid}">
+                                    @if (healthFormGroup.get('franchise')?.touched && healthFormGroup.get('franchise')?.invalid) {
+                                        <small>This field is required</small>
+                                    }
+                                </div>
+                            </div>
+                        </form>
+                    }
+
                     
 
                     <div class="single-input">

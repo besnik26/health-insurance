@@ -10,6 +10,9 @@ import {
 import { RouterLink } from '@angular/router';
 import { PhoneNumberInputComponent } from '../share/phone-number-input/phone-number-input.component';
 import { FormModel } from '../models/form.model';
+import {MatInputModule} from '@angular/material/input';
+import {MatSelectModule} from '@angular/material/select';
+import {MatFormFieldModule} from '@angular/material/form-field';
 @Component({
   selector: 'app-global-form',
   standalone: true,
@@ -18,7 +21,10 @@ import { FormModel } from '../models/form.model';
     NgClass,
     NgStyle,
     RouterLink,
-    PhoneNumberInputComponent
+    PhoneNumberInputComponent,
+    MatFormFieldModule, 
+    MatSelectModule, 
+    MatInputModule,
   ],
   templateUrl: './global-form.component.html',
   styleUrl: './global-form.component.scss'
@@ -157,5 +163,11 @@ export class GlobalFormComponent implements OnInit, AfterViewInit{
       this.phoneInputComponent.phone.markAsTouched();
     })
   }
+
+  foods = [
+    {value: 'insurance-1', viewValue: 'Insurance-1'},
+    {value: 'insurance-2', viewValue: 'Insurance-2'},
+    {value: 'insurance-3', viewValue: 'Insurance-3'},
+  ];
 
 }

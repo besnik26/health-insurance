@@ -119,6 +119,33 @@ small{
                 span{
                     font-size: 13px;
                 }
+                
+            }
+            .range-input{
+                input {
+                    -webkit-appearance: none!important;
+                    outline: none;
+                    height: 13px;
+                    background: #ececec;
+                    border-radius: 13px;
+                    border: 1px solid #ececec;
+                    overflow: hidden;
+                    padding: 0;
+                    margin-top: 13px;
+                  }
+          
+                  input::-webkit-slider-thumb {
+                    margin: 0 !important;
+                    padding: 0 !important;
+                    -webkit-appearance: none;
+                    width: 11px;
+                    height: 11px;
+                    border-radius: 50%;
+                    border: 1px solid #8CC540;
+                    background: black;
+                    box-shadow: -410px 0 0 405px #8CC540, -10px 0 15px rgba(0, 0, 0, 0.2);
+                    cursor: pointer;
+                  }
             }
 
             .terms{
@@ -258,4 +285,8 @@ small{
     .mat-pseudo-checkbox-minimal.mat-pseudo-checkbox-checked::after, .mat-pseudo-checkbox-minimal.mat-pseudo-checkbox-indeterminate::after{
         color: #8CC540!important;
     }
+    .mdc-slider .mdc-slider__track{
+        background-color: #a5a5a5;
+    }
+   
 }

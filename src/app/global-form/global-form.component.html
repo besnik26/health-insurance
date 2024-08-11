@@ -64,14 +64,25 @@
                             <div class="double-input margin-t-15">
                                 <div class="single-input">
                                     <span>Reason</span>
-                                    <input type="text" formControlName="reason" [ngClass]="{'valid-radio': provisionFormGroup.get('reason')?.valid}">
-                                    @if (provisionFormGroup.get('reason')?.touched && provisionFormGroup.get('reason')?.invalid) {
-                                        <small>This field is required</small>
-                                    }
+                                    <mat-form-field [ngClass]="{'valid-select': provisionFormGroup.get('reason')?.valid}">
+                                        <mat-label>Please select </mat-label>
+                                        <mat-select formControlName="reason">
+                                          @for (reason of reasons; track reason) {
+                                            <mat-option [value]="reason.value">{{reason.viewValue}}</mat-option>
+                                          }
+                                        </mat-select>
+                                    </mat-form-field>
                                 </div>
-                                <div class="single-input">
-                                    <span>Investment per month</span>
-                                    <input type="text" formControlName="investmentPerMonth" [ngClass]="{'valid-radio': provisionFormGroup.get('investmentPerMonth')?.valid}">
+                                <div class="single-input range-input">
+                                    <span>Investment per month - {{provisionFormGroup.get('investmentPerMonth')?.value || '0'}}</span>
+                                    <input type="range"
+                                           formControlName="investmentPerMonth"
+                                           name="investmentPerMonth"
+                                           min="0"
+                                           max="1500"
+                                           step="100"
+                                           
+                                           >
                                     @if (provisionFormGroup.get('investmentPerMonth')?.touched && provisionFormGroup.get('investmentPerMonth')?.invalid) {
                                         <small>This field is required</small>
                                     }
@@ -102,10 +113,14 @@
                                 </div>
                                 <div class="single-input">
                                     <span>Coverage</span>
-                                    <input type="text" formControlName="coverage" [ngClass]="{'valid-radio': provisionFormGroup.get('coverage')?.valid}">
-                                    @if (provisionFormGroup.get('coverage')?.touched && provisionFormGroup.get('coverage')?.invalid) {
-                                        <small>This field is required</small>
-                                    }
+                                    <mat-form-field [ngClass]="{'valid-select': legalFormGroup.get('coverage')?.valid}">
+                                        <mat-label>Please select </mat-label>
+                                        <mat-select formControlName="coverage">
+                                          @for (coverage of coverages; track coverage) {
+                                            <mat-option [value]="coverage.value">{{coverage.viewValue}}</mat-option>
+                                          }
+                                        </mat-select>
+                                    </mat-form-field>
                                 </div>
                             </div>
                         </form>
@@ -117,17 +132,24 @@
                                 <div class="single-input">
                                     <span>Insurance</span>
                                     <mat-form-field [ngClass]="{'valid-select': healthFormGroup.get('insurance')?.valid}">
-                                        <mat-label>Please select {{healthFormGroup.get('insurance')?.value}}</mat-label>
+                                        <mat-label>Please select </mat-label>
                                         <mat-select formControlName="insurance">
-                                          @for (state of insurances; track state) {
-                                            <mat-option [value]="state.value">{{state.viewValue}}</mat-option>
+                                          @for (insurance of insurances; track insurance) {
+                                            <mat-option [value]="insurance.value">{{insurance.viewValue}}</mat-option>
                                           }
                                         </mat-select>
                                     </mat-form-field>
                                 </div>
-                                <div class="single-input">
-                                    <span>Franchise</span>
-                                    <input type="text" formControlName="franchise" [ngClass]="{'valid-radio': healthFormGroup.get('franchise')?.valid}">
+                                <div class="single-input range-input">
+                                    <span>Franchise - {{healthFormGroup.get('franchise')?.value || '0'}}</span>
+                                    <input type="range"
+                                           formControlName="franchise"
+                                           name="franchise"
+                                           min="0"
+                                           max="2500"
+                                           step="500"
+                                           
+                                           >
                                     @if (healthFormGroup.get('franchise')?.touched && healthFormGroup.get('franchise')?.invalid) {
                                         <small>This field is required</small>
                                     }

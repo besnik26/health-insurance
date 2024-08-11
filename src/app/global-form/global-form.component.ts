@@ -13,6 +13,8 @@ import { FormModel } from '../models/form.model';
 import {MatInputModule} from '@angular/material/input';
 import {MatSelectModule} from '@angular/material/select';
 import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatSliderModule} from '@angular/material/slider';
+
 @Component({
   selector: 'app-global-form',
   standalone: true,
@@ -25,6 +27,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
     MatFormFieldModule, 
     MatSelectModule, 
     MatInputModule,
+    MatSliderModule
   ],
   templateUrl: './global-form.component.html',
   styleUrl: './global-form.component.scss'
@@ -67,7 +70,7 @@ export class GlobalFormComponent implements OnInit, AfterViewInit{
   private buildProvisionForm(){
     this.provisionFormGroup = this.formBuilder.group({
       reason:['',Validators.required],
-      investmentPerMonth:['',Validators.required]
+      investmentPerMonth:['0',Validators.required]
     })
   }
   private buildLegalForm(){
@@ -80,7 +83,7 @@ export class GlobalFormComponent implements OnInit, AfterViewInit{
   private buildHealthForm(){
     this.healthFormGroup = this.formBuilder.group({
       insurance:['',Validators.required],
-      franchise:['',Validators.required]
+      franchise:['0',Validators.required]
     })
   }
 
@@ -163,21 +166,27 @@ export class GlobalFormComponent implements OnInit, AfterViewInit{
 
   private handleInsuranceTypeChange(selectedType: string): void {
     if (selectedType === 'car') {
-      this.provisionFormGroup.reset();
-      this.healthFormGroup.reset();
+      this.provisionFormGroup.get('reason')?.reset();
+      this.provisionFormGroup.get('investmentPerMonth')?.setValue('0');
+      this.healthFormGroup.get('insurance')?.reset();
+      this.healthFormGroup.get('franchise')?.setValue('0');
       this.legalFormGroup.reset();
     } else if (selectedType === 'provision') {
       this.carFormGroup.reset();
-      this.healthFormGroup.reset();
+      this.healthFormGroup.get('insurance')?.reset();
+      this.healthFormGroup.get('franchise')?.setValue('0');
       this.legalFormGroup.reset();
     } else if (selectedType === 'legal') {
       this.carFormGroup.reset();
-      this.healthFormGroup.reset();
-      this.provisionFormGroup.reset();
+      this.healthFormGroup.get('insurance')?.reset();
+      this.healthFormGroup.get('franchise')?.setValue('0');
+      this.provisionFormGroup.get('reason')?.reset();
+      this.provisionFormGroup.get('investmentPerMonth')?.setValue('0');
     } else if (selectedType === 'health') {
       this.carFormGroup.reset();
       this.legalFormGroup.reset();
-      this.provisionFormGroup.reset();
+      this.provisionFormGroup.get('reason')?.reset();
+      this.provisionFormGroup.get('investmentPerMonth')?.setValue('0');
     }
   }
 
@@ -214,5 +223,19 @@ export class GlobalFormComponent implements OnInit, AfterViewInit{
     {value: 'insurance-2', viewValue: 'Insurance-2'},
     {value: 'insurance-3', viewValue: 'Insurance-3'},
   ];
+
+  reasons = [
+    {value: 'reason-1', viewValue: 'Reason-1'},
+    {value: 'reason-2', viewValue: 'Reason-2'},
+    {value: 'reason-3', viewValue: 'Reason-3'},
+  ];
+
+  coverages = [
+    {value: 'coverage-1', viewValue: 'Coverage-1'},
+    {value: 'coverage-2', viewValue: 'Coverage-2'},
+    {value: 'coverage-3', viewValue: 'Coverage-3'},
+  ];
+
+
 
 }

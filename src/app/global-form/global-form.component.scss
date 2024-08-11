@@ -188,13 +188,74 @@ small{
 }
 
 ::ng-deep{
-    .mat-mdc-form-field{
-        height: 40px;
+    .valid-select .mat-mdc-text-field-wrapper {
+        border: 1px solid #8CC540 !important; 
+        background-color: #fafafa !important;
+      }
+
+    .mat-mdc-form-field-type-mat-select:not(.mat-form-field-disabled) .mat-mdc-text-field-wrapper {
+        padding: 0 10px 0 10px!important;
+        border-radius: 16px!important;
         border: 1px solid #e8e8e8;
-        // border-radius: 16px;
-        background-color: #fafafa;
-        .mat-mdc-form-field-subscript-wrapper{
-            display: none;
-        }
+        background-color: #fafafa!important;
+    }
+    .mdc-text-field--filled:not(.mdc-text-field--disabled){
+        background-color: #fafafa!important;
+    }
+    .mat-mdc-text-field-wrapper{
+        height: 40px!important;
+    }
+    .mat-mdc-text-field-wrapper .mat-mdc-form-field-flex .mat-mdc-floating-label{
+        top: 20px!important;
+    }
+    .mat-mdc-form-field-subscript-wrapper, .mat-mdc-form-field-bottom-align::before{
+        display: none;
+    }
+    .mat-mdc-form-field-infix {
+        padding: 7px 0 0 0!important;
+    }
+    
+    .mdc-floating-label--float-above{
+        transform: none!important;
+        opacity: 0!important;
+    }
+    
+
+    .mat-form-field-appearance-fill .mat-mdc-select-arrow-wrapper {
+        transform: none!important;
+    }
+    // .mat-mdc-form-field .mat-mdc-floating-label.mdc-floating-label {
+    //     display: none;
+    // }
+    
+    .mdc-text-field--filled:not(.mdc-text-field--disabled).mdc-text-field--focused .mdc-floating-label, .mdc-text-field--filled:not(.mdc-text-field--disabled).mdc-text-field--focused .mdc-floating-label--float-above {
+        display: none!important;
+    }
+    .mat-form-field-hide-placeholder .mat-mdc-select-placeholder{
+        color: #a5a5a5!important;
+        font-size: 10px!important;
+        letter-spacing: normal!important;
+    }
+    
+    .mdc-text-field--filled:not(.mdc-text-field--disabled) .mdc-line-ripple::before {
+        display: none!important;
+    }
+    .mdc-text-field--filled:not(.mdc-text-field--disabled) .mdc-line-ripple::after {
+        display: none!important;
+    }
+    .mat-mdc-form-field:not(.mat-form-field-disabled) .mat-mdc-floating-label.mdc-floating-label{
+        font-size: 14px!important;
+    }
+    .mat-mdc-select-value-text{
+        font-size: 14px;
+    }
+    div.mat-mdc-select-panel .mat-mdc-option{
+        font-size: 14px;
+    }
+    .mat-mdc-option.mdc-list-item--selected:not(.mdc-list-item--disabled) .mdc-list-item__primary-text{
+        color: #8CC540!important;
+    }
+    .mat-pseudo-checkbox-minimal.mat-pseudo-checkbox-checked::after, .mat-pseudo-checkbox-minimal.mat-pseudo-checkbox-indeterminate::after{
+        color: #8CC540!important;
     }
 }

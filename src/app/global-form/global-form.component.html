@@ -116,14 +116,14 @@
                             <div class="double-input margin-t-15">
                                 <div class="single-input">
                                     <span>Insurance</span>
-                                    <mat-form-field>
-                                        <mat-label>Please select</mat-label>
-                                        <mat-select>
-                                          @for (food of foods; track food) {
-                                            <mat-option [value]="food.value">{{food.viewValue}}</mat-option>
+                                    <mat-form-field [ngClass]="{'valid-select': healthFormGroup.get('insurance')?.valid}">
+                                        <mat-label>Please select {{healthFormGroup.get('insurance')?.value}}</mat-label>
+                                        <mat-select formControlName="insurance">
+                                          @for (state of insurances; track state) {
+                                            <mat-option [value]="state.value">{{state.viewValue}}</mat-option>
                                           }
                                         </mat-select>
-                                      </mat-form-field>
+                                    </mat-form-field>
                                 </div>
                                 <div class="single-input">
                                     <span>Franchise</span>

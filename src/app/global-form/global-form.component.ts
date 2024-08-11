@@ -123,6 +123,34 @@ export class GlobalFormComponent implements OnInit, AfterViewInit{
     });
   }
 
+  getDataLegal(){
+    const formData = this.myForm.value;
+    const legalData = this.legalFormGroup.value;
+    return new FormModel({
+      fullName: formData.fullName,
+      email: formData.email,
+      mobile: this.phoneInputComponent.getFullNumber(),
+      insuranceType: formData.insuranceType,
+      terms: formData.terms,
+      legalIndividualOrFamily: legalData.individualOrFamily,
+      legalCoverage:legalData.coverage
+    });
+  }
+
+  getDataHealth(){
+    const formData = this.myForm.value;
+    const healthData = this.healthFormGroup.value;
+    return new FormModel({
+      fullName: formData.fullName,
+      email: formData.email,
+      mobile: this.phoneInputComponent.getFullNumber(),
+      insuranceType: formData.insuranceType,
+      terms: formData.terms,
+      healthInsurance: healthData.insurance,
+      healthFranchise: healthData.franchise
+    });
+  }
+
   private cleanObject(obj: { [key: string]: any }): { [key: string]: any } {
     return Object.keys(obj).reduce((acc, key) => {
       if (obj[key] !== undefined) {
@@ -136,8 +164,20 @@ export class GlobalFormComponent implements OnInit, AfterViewInit{
   private handleInsuranceTypeChange(selectedType: string): void {
     if (selectedType === 'car') {
       this.provisionFormGroup.reset();
+      this.healthFormGroup.reset();
+      this.legalFormGroup.reset();
     } else if (selectedType === 'provision') {
       this.carFormGroup.reset();
+      this.healthFormGroup.reset();
+      this.legalFormGroup.reset();
+    } else if (selectedType === 'legal') {
+      this.carFormGroup.reset();
+      this.healthFormGroup.reset();
+      this.provisionFormGroup.reset();
+    } else if (selectedType === 'health') {
+      this.carFormGroup.reset();
+      this.legalFormGroup.reset();
+      this.provisionFormGroup.reset();
     }
   }
 
@@ -146,9 +186,14 @@ export class GlobalFormComponent implements OnInit, AfterViewInit{
       if(this.myForm.get('insuranceType')?.value === 'car'){
         const modelData = this.getDataCar();    
         console.log(this.cleanObject(modelData));
-      }
-      else if(this.myForm.get('insuranceType')?.value === 'provision'){
+      } else if(this.myForm.get('insuranceType')?.value === 'provision'){
         const modelData = this.getDataProvision();    
+        console.log(this.cleanObject(modelData));
+      } else if(this.myForm.get('insuranceType')?.value === 'legal'){
+        const modelData = this.getDataLegal();    
+        console.log(this.cleanObject(modelData));
+      } else if(this.myForm.get('insuranceType')?.value === 'health'){
+        const modelData = this.getDataHealth();    
         console.log(this.cleanObject(modelData));
       }
     }
@@ -164,7 +209,7 @@ export class GlobalFormComponent implements OnInit, AfterViewInit{
     })
   }
 
-  foods = [
+  insurances = [
     {value: 'insurance-1', viewValue: 'Insurance-1'},
     {value: 'insurance-2', viewValue: 'Insurance-2'},
     {value: 'insurance-3', viewValue: 'Insurance-3'},

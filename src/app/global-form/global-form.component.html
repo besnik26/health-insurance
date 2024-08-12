@@ -95,23 +95,27 @@
                         <form [formGroup]="legalFormGroup">
                             <div class="double-input margin-t-15">
                                 <div class="double-input">
-                                    <div class="single-input">
+                                    <div class="single-input si-center">
                                         <span>Single</span>
-                                        <input type="text" formControlName="reason" [ngClass]="{'valid-radio': provisionFormGroup.get('reason')?.valid}">
-                                        @if (provisionFormGroup.get('reason')?.touched && provisionFormGroup.get('reason')?.invalid) {
-                                            <small>This field is required</small>
-                                        }
+                                        <label class="cover-label" for="individual">
+                                            <div class="radio-input radio-input-image-only" [ngClass]="{'valid-radio': legalFormGroup.get('individualOrFamily')?.value === 'individual'}">
+                                                <div class="icon-div icon-individual" [ngClass]="{'individual-valid': legalFormGroup.get('individualOrFamily')?.value === 'individual'}"></div>
+                                                <input type="radio" value="individual" name="individualOrFamily" formControlName="individualOrFamily" id="individual">
+                                            </div>
+                                        </label>
                                     </div>
-                                    <div class="single-input">
+                                    <div class="single-input si-center">
                                         <span>Family</span>
-                                        <input type="text" formControlName="reason" [ngClass]="{'valid-radio': provisionFormGroup.get('reason')?.valid}">
-                                        @if (provisionFormGroup.get('reason')?.touched && provisionFormGroup.get('reason')?.invalid) {
-                                            <small>This field is required</small>
-                                        }
+                                        <label class="cover-label" for="family">
+                                            <div class="radio-input radio-input-image-only" [ngClass]="{'valid-radio': legalFormGroup.get('individualOrFamily')?.value === 'family'}">
+                                                <div class="icon-div icon-family" [ngClass]="{'family-valid': legalFormGroup.get('individualOrFamily')?.value === 'family'}"></div>
+                                                <input type="radio" value="family" name="individualOrFamily" formControlName="individualOrFamily" id="family">
+                                            </div>
+                                        </label>
                                     </div>
                                     
                                 </div>
-                                <div class="single-input">
+                                <div class="single-input max-w-200">
                                     <span>Coverage</span>
                                     <mat-form-field [ngClass]="{'valid-select': legalFormGroup.get('coverage')?.valid}">
                                         <mat-label>Please select </mat-label>

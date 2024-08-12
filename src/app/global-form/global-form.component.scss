@@ -10,6 +10,9 @@ small{
 .margin-t-15{
     margin-top: 15px;
 }
+.max-w-200{
+    max-width: 200px;
+}
 .valid-radio{
     border: 1px solid #8CC540!important;
     label{
@@ -40,58 +43,74 @@ small{
                 row-gap: 16px;
                 flex-wrap: wrap;
                 margin: 10px 0 0 0;
-                .cover-label{ 
-                    max-width: 199px;
-                    width: 100%;
+               
+            }
+            .cover-label{ 
+                max-width: 199px;
+                width: 100%;
+            }
+            .radio-input-image-only{
+                padding: 0 33px!important;
+            }
+            .radio-input{
+                // border: 1px solid black;
+                border: 1px solid #e8e8e8;
+                background-color: #fafafa;
+                width: 100%;
+                border-radius: 16px;
+                height: 40px;
+                display: flex;
+                align-items: center;
+                padding: 0 10px;
+                label{
+                    margin-left: 5px;
+                    color: #a5a5a5;
                 }
-                .radio-input{
-                    // border: 1px solid black;
-                    border: 1px solid #e8e8e8;
-                    background-color: #fafafa;
-                    width: 100%;
-                    border-radius: 16px;
-                    height: 40px;
-                    display: flex;
-                    align-items: center;
-                    padding: 0 10px;
-                    label{
-                        margin-left: 5px;
-                        color: #a5a5a5;
-                    }
-                    input{
-                        display: none;
-                    }
-                    .icon-div{
-                        width: 25px;
-                        height: 25px;
-                        background-size: contain;
-                        background-position: center;
-                        background-repeat: no-repeat;
-                    }
-                    .icon-health{
-                        background-image: url(../../assets/images/global-form/health-icon.svg);
-                    }
-                    .health-valid{
-                        background-image: url(../../assets/images/global-form/health-icon-v.svg)!important;
-                    }
-                    .icon-provision{
-                        background-image: url(../../assets/images/global-form/provision-icon.svg);
-                    }
-                    .provision-valid{
-                        background-image: url(../../assets/images/global-form/provision-icon-v.svg)!important;
-                    }
-                    .icon-legal{
-                        background-image: url(../../assets/images/global-form/legal-icon.svg);
-                    }
-                    .legal-valid{
-                        background-image: url(../../assets/images/global-form/legal-icon-v.svg)!important;
-                    }
-                    .icon-car{
-                        background-image: url(../../assets/images/global-form/car-icon.svg);
-                    }
-                    .car-valid{
-                        background-image: url(../../assets/images/global-form/car-icon-v.svg)!important;
-                    }
+                input{
+                    display: none;
+                }
+                .icon-div{
+                    width: 25px;
+                    height: 25px;
+                    background-size: contain;
+                    background-position: center;
+                    background-repeat: no-repeat;
+                }
+                .icon-health{
+                    background-image: url(../../assets/images/global-form/health-icon.svg);
+                }
+                .health-valid{
+                    background-image: url(../../assets/images/global-form/health-icon-v.svg)!important;
+                }
+                .icon-provision{
+                    background-image: url(../../assets/images/global-form/provision-icon.svg);
+                }
+                .provision-valid{
+                    background-image: url(../../assets/images/global-form/provision-icon-v.svg)!important;
+                }
+                .icon-legal{
+                    background-image: url(../../assets/images/global-form/legal-icon.svg);
+                }
+                .legal-valid{
+                    background-image: url(../../assets/images/global-form/legal-icon-v.svg)!important;
+                }
+                .icon-car{
+                    background-image: url(../../assets/images/global-form/car-icon.svg);
+                }
+                .car-valid{
+                    background-image: url(../../assets/images/global-form/car-icon-v.svg)!important;
+                }
+                .icon-individual{
+                    background-image: url(../../assets//images/global-form/individual.svg);
+                }
+                .individual-valid{
+                    background-image: url(../../assets//images/global-form/individual-valid.svg)!important;
+                }
+                .icon-family{
+                    background-image: url(../../assets//images/global-form/family.svg);
+                }
+                .family-valid{
+                    background-image: url(../../assets//images/global-form/family-valid.svg)!important;
                 }
             }
             .double-input{
@@ -100,6 +119,9 @@ small{
                 column-gap: 16px;
                 // margin-top: 15px;
                
+            }
+            .si-center{
+                align-items: center!important;
             }
             .single-input{
                 display: flex;
@@ -125,7 +147,7 @@ small{
                 input {
                     -webkit-appearance: none!important;
                     outline: none;
-                    height: 13px;
+                    height: 15px;
                     background: #ececec;
                     border-radius: 13px;
                     border: 1px solid #ececec;
@@ -138,8 +160,8 @@ small{
                     margin: 0 !important;
                     padding: 0 !important;
                     -webkit-appearance: none;
-                    width: 11px;
-                    height: 11px;
+                    width: 14px;
+                    height: 14px;
                     border-radius: 50%;
                     border: 1px solid #8CC540;
                     background: black;

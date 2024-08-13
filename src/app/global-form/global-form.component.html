@@ -3,200 +3,211 @@
         <div class="form-section">
             <div class="form-div">
                 <form [formGroup]="myForm">
-                    <h3 class="text-center">Choose your insurance</h3>
+                    @if (!showThanks) {
+                        <div class="form-cover">
 
-                    <div class="insurance-type">
-                        <label class="cover-label" for="insurance-health">
-                            <div class="radio-input" [ngClass]="{'valid-radio': myForm.get('insuranceType')?.value === 'health'}">
-                                <div class="icon-div icon-health" [ngClass]="{'health-valid': myForm.get('insuranceType')?.value === 'health'}"></div>
-                                <input type="radio" value="health" name="insuranceType" formControlName="insuranceType" id="insurance-health">
-                                <label for="insurance-health">Health insurance</label>
-                            </div>
-                        </label>
-                        <label class="cover-label" for="insurance-provision">
-                            <div class="radio-input" [ngClass]="{'valid-radio': myForm.get('insuranceType')?.value === 'provision'}">
-                                <div class="icon-div icon-provision" [ngClass]="{'provision-valid': myForm.get('insuranceType')?.value === 'provision'}"></div>
-                                <input type="radio" value="provision" name="insuranceType" formControlName="insuranceType" id="insurance-provision">
-                                <label for="insurance-provision">Provision</label>
-                            </div>
-                        </label>
-                        <label class="cover-label" for="insurance-legal">
-                            <div class="radio-input" [ngClass]="{'valid-radio': myForm.get('insuranceType')?.value === 'legal'}">
-                                <div class="icon-div icon-legal" [ngClass]="{'legal-valid': myForm.get('insuranceType')?.value === 'legal'}"></div>
-                                <input type="radio" value="legal" name="insuranceType" formControlName="insuranceType" id="insurance-legal">
-                                <label for="insurance-legal">Legal protection</label>
-                            </div>
-                        </label>
-                        <label class="cover-label" for="insurance-car">
-                            <div class="radio-input" [ngClass]="{'valid-radio': myForm.get('insuranceType')?.value === 'car'}">
-                                <div class="icon-div icon-car" [ngClass]="{'car-valid': myForm.get('insuranceType')?.value === 'car'}"></div>
-                                <input type="radio" value="car" name="insuranceType" formControlName="insuranceType" id="insurance-car">
-                                <label for="insurance-car">Car insurance</label>
-                            </div>
-                        </label>
-                    </div>
-                    @if (myForm.get('insuranceType')?.touched && myForm.get('insuranceType')?.invalid) {
-                        <small>This field is required</small>
-                    }
-                    @if (myForm.get('insuranceType')?.value ==='car') {
-                        <form [formGroup]="carFormGroup">
-                            <div class="double-input margin-t-15">
-                                <div class="single-input">
-                                    <span>Brand & Model</span>
-                                    <input type="text" formControlName="carBrand" [ngClass]="{'valid-radio': carFormGroup.get('carBrand')?.valid}">
-                                    @if (carFormGroup.get('carBrand')?.touched && carFormGroup.get('carBrand')?.invalid) {
-                                        <small>This field is required</small>
-                                    }
-                                </div>
-                                <div class="single-input">
-                                    <span>1. Placing on the market</span>
-                                    <input type="text" formControlName="marketPlacing" [ngClass]="{'valid-radio': carFormGroup.get('marketPlacing')?.valid}">
-                                    @if (carFormGroup.get('marketPlacing')?.touched && carFormGroup.get('marketPlacing')?.invalid) {
-                                        <small>This field is required</small>
-                                    }
-                                </div>
-                            </div>
-                        </form>
-                    }
-
-                    @if (myForm.get('insuranceType')?.value ==='provision') {
-                        <form [formGroup]="provisionFormGroup">
-                            <div class="double-input margin-t-15">
-                                <div class="single-input">
-                                    <span>Reason</span>
-                                    <mat-form-field [ngClass]="{'valid-select': provisionFormGroup.get('reason')?.valid}">
-                                        <mat-label>Please select </mat-label>
-                                        <mat-select formControlName="reason">
-                                          @for (reason of reasons; track reason) {
-                                            <mat-option [value]="reason.value">{{reason.viewValue}}</mat-option>
-                                          }
-                                        </mat-select>
-                                    </mat-form-field>
-                                </div>
-                                <div class="single-input range-input">
-                                    <span>Investment per month - {{provisionFormGroup.get('investmentPerMonth')?.value || '0'}}</span>
-                                    <input type="range"
-                                           formControlName="investmentPerMonth"
-                                           name="investmentPerMonth"
-                                           min="0"
-                                           max="1500"
-                                           step="100"
-                                           
-                                           >
-                                    @if (provisionFormGroup.get('investmentPerMonth')?.touched && provisionFormGroup.get('investmentPerMonth')?.invalid) {
-                                        <small>This field is required</small>
-                                    }
-                                </div>
-                            </div>
-                        </form>
-                    }
-
-                    @if (myForm.get('insuranceType')?.value ==='legal') {
-                        <form [formGroup]="legalFormGroup">
-                            <div class="double-input margin-t-15">
-                                <div class="double-input">
-                                    <div class="single-input si-center">
-                                        <span>Single</span>
-                                        <label class="cover-label" for="individual">
-                                            <div class="radio-input radio-input-image-only" [ngClass]="{'valid-radio': legalFormGroup.get('individualOrFamily')?.value === 'individual'}">
-                                                <div class="icon-div icon-individual" [ngClass]="{'individual-valid': legalFormGroup.get('individualOrFamily')?.value === 'individual'}"></div>
-                                                <input type="radio" value="individual" name="individualOrFamily" formControlName="individualOrFamily" id="individual">
-                                            </div>
-                                        </label>
+                            <h3 class="text-center">Choose your insurance</h3>
+        
+                            <div class="insurance-type">
+                                <label class="cover-label" for="insurance-health">
+                                    <div class="radio-input" [ngClass]="{'valid-radio': myForm.get('insuranceType')?.value === 'health'}">
+                                        <div class="icon-div icon-health" [ngClass]="{'health-valid': myForm.get('insuranceType')?.value === 'health'}"></div>
+                                        <input type="radio" value="health" name="insuranceType" formControlName="insuranceType" id="insurance-health">
+                                        <label for="insurance-health">Health insurance</label>
                                     </div>
-                                    <div class="single-input si-center">
-                                        <span>Family</span>
-                                        <label class="cover-label" for="family">
-                                            <div class="radio-input radio-input-image-only" [ngClass]="{'valid-radio': legalFormGroup.get('individualOrFamily')?.value === 'family'}">
-                                                <div class="icon-div icon-family" [ngClass]="{'family-valid': legalFormGroup.get('individualOrFamily')?.value === 'family'}"></div>
-                                                <input type="radio" value="family" name="individualOrFamily" formControlName="individualOrFamily" id="family">
-                                            </div>
-                                        </label>
+                                </label>
+                                <label class="cover-label" for="insurance-provision">
+                                    <div class="radio-input" [ngClass]="{'valid-radio': myForm.get('insuranceType')?.value === 'provision'}">
+                                        <div class="icon-div icon-provision" [ngClass]="{'provision-valid': myForm.get('insuranceType')?.value === 'provision'}"></div>
+                                        <input type="radio" value="provision" name="insuranceType" formControlName="insuranceType" id="insurance-provision">
+                                        <label for="insurance-provision">Provision</label>
                                     </div>
-                                    
-                                </div>
-                                <div class="single-input max-w-200">
-                                    <span>Coverage</span>
-                                    <mat-form-field [ngClass]="{'valid-select': legalFormGroup.get('coverage')?.valid}">
-                                        <mat-label>Please select </mat-label>
-                                        <mat-select formControlName="coverage">
-                                          @for (coverage of coverages; track coverage) {
-                                            <mat-option [value]="coverage.value">{{coverage.viewValue}}</mat-option>
-                                          }
-                                        </mat-select>
-                                    </mat-form-field>
-                                </div>
+                                </label>
+                                <label class="cover-label" for="insurance-legal">
+                                    <div class="radio-input" [ngClass]="{'valid-radio': myForm.get('insuranceType')?.value === 'legal'}">
+                                        <div class="icon-div icon-legal" [ngClass]="{'legal-valid': myForm.get('insuranceType')?.value === 'legal'}"></div>
+                                        <input type="radio" value="legal" name="insuranceType" formControlName="insuranceType" id="insurance-legal">
+                                        <label for="insurance-legal">Legal protection</label>
+                                    </div>
+                                </label>
+                                <label class="cover-label" for="insurance-car">
+                                    <div class="radio-input" [ngClass]="{'valid-radio': myForm.get('insuranceType')?.value === 'car'}">
+                                        <div class="icon-div icon-car" [ngClass]="{'car-valid': myForm.get('insuranceType')?.value === 'car'}"></div>
+                                        <input type="radio" value="car" name="insuranceType" formControlName="insuranceType" id="insurance-car">
+                                        <label for="insurance-car">Car insurance</label>
+                                    </div>
+                                </label>
                             </div>
-                        </form>
-                    }
-
-                    @if (myForm.get('insuranceType')?.value ==='health') {
-                        <form [formGroup]="healthFormGroup">
-                            <div class="double-input margin-t-15">
-                                <div class="single-input">
-                                    <span>Insurance</span>
-                                    <mat-form-field [ngClass]="{'valid-select': healthFormGroup.get('insurance')?.valid}">
-                                        <mat-label>Please select </mat-label>
-                                        <mat-select formControlName="insurance">
-                                          @for (insurance of insurances; track insurance) {
-                                            <mat-option [value]="insurance.value">{{insurance.viewValue}}</mat-option>
-                                          }
-                                        </mat-select>
-                                    </mat-form-field>
-                                </div>
-                                <div class="single-input range-input">
-                                    <span>Franchise - {{healthFormGroup.get('franchise')?.value || '0'}}</span>
-                                    <input type="range"
-                                           formControlName="franchise"
-                                           name="franchise"
-                                           min="0"
-                                           max="2500"
-                                           step="500"
-                                           
-                                           >
-                                    @if (healthFormGroup.get('franchise')?.touched && healthFormGroup.get('franchise')?.invalid) {
-                                        <small>This field is required</small>
-                                    }
-                                </div>
+                            @if (myForm.get('insuranceType')?.touched && myForm.get('insuranceType')?.invalid) {
+                                <small>This field is required</small>
+                            }
+                            @if (myForm.get('insuranceType')?.value ==='car') {
+                                <form [formGroup]="carFormGroup">
+                                    <div class="double-input margin-t-15">
+                                        <div class="single-input">
+                                            <span>Brand & Model</span>
+                                            <input type="text" formControlName="carBrand" [ngClass]="{'valid-radio': carFormGroup.get('carBrand')?.valid}">
+                                            @if (carFormGroup.get('carBrand')?.touched && carFormGroup.get('carBrand')?.invalid) {
+                                                <small>This field is required</small>
+                                            }
+                                        </div>
+                                        <div class="single-input">
+                                            <span>1. Placing on the market</span>
+                                            <input type="text" formControlName="marketPlacing" [ngClass]="{'valid-radio': carFormGroup.get('marketPlacing')?.valid}">
+                                            @if (carFormGroup.get('marketPlacing')?.touched && carFormGroup.get('marketPlacing')?.invalid) {
+                                                <small>This field is required</small>
+                                            }
+                                        </div>
+                                    </div>
+                                </form>
+                            }
+        
+                            @if (myForm.get('insuranceType')?.value ==='provision') {
+                                <form [formGroup]="provisionFormGroup">
+                                    <div class="double-input margin-t-15">
+                                        <div class="single-input">
+                                            <span>Reason</span>
+                                            <mat-form-field [ngClass]="{'valid-select': provisionFormGroup.get('reason')?.valid}">
+                                                <mat-label>Please select </mat-label>
+                                                <mat-select formControlName="reason">
+                                                  @for (reason of reasons; track reason) {
+                                                    <mat-option [value]="reason.value">{{reason.viewValue}}</mat-option>
+                                                  }
+                                                </mat-select>
+                                            </mat-form-field>
+                                        </div>
+                                        <div class="single-input range-input">
+                                            <span>Investment per month - {{provisionFormGroup.get('investmentPerMonth')?.value || '0'}}</span>
+                                            <input type="range"
+                                                   formControlName="investmentPerMonth"
+                                                   name="investmentPerMonth"
+                                                   min="0"
+                                                   max="1500"
+                                                   step="100"
+                                                   
+                                                   >
+                                            @if (provisionFormGroup.get('investmentPerMonth')?.touched && provisionFormGroup.get('investmentPerMonth')?.invalid) {
+                                                <small>This field is required</small>
+                                            }
+                                        </div>
+                                    </div>
+                                </form>
+                            }
+        
+                            @if (myForm.get('insuranceType')?.value ==='legal') {
+                                <form [formGroup]="legalFormGroup">
+                                    <div class="double-input margin-t-15">
+                                        <div class="double-input">
+                                            <div class="single-input si-center">
+                                                <span>Single</span>
+                                                <label class="cover-label" for="individual">
+                                                    <div class="radio-input radio-input-image-only" [ngClass]="{'valid-radio': legalFormGroup.get('individualOrFamily')?.value === 'individual'}">
+                                                        <div class="icon-div icon-individual" [ngClass]="{'individual-valid': legalFormGroup.get('individualOrFamily')?.value === 'individual'}"></div>
+                                                        <input type="radio" value="individual" name="individualOrFamily" formControlName="individualOrFamily" id="individual">
+                                                    </div>
+                                                </label>
+                                            </div>
+                                            <div class="single-input si-center">
+                                                <span>Family</span>
+                                                <label class="cover-label" for="family">
+                                                    <div class="radio-input radio-input-image-only" [ngClass]="{'valid-radio': legalFormGroup.get('individualOrFamily')?.value === 'family'}">
+                                                        <div class="icon-div icon-family" [ngClass]="{'family-valid': legalFormGroup.get('individualOrFamily')?.value === 'family'}"></div>
+                                                        <input type="radio" value="family" name="individualOrFamily" formControlName="individualOrFamily" id="family">
+                                                    </div>
+                                                </label>
+                                            </div>
+                                            
+                                        </div>
+                                        <div class="single-input max-w-200">
+                                            <span>Coverage</span>
+                                            <mat-form-field [ngClass]="{'valid-select': legalFormGroup.get('coverage')?.valid}">
+                                                <mat-label>Please select </mat-label>
+                                                <mat-select formControlName="coverage">
+                                                  @for (coverage of coverages; track coverage) {
+                                                    <mat-option [value]="coverage.value">{{coverage.viewValue}}</mat-option>
+                                                  }
+                                                </mat-select>
+                                            </mat-form-field>
+                                        </div>
+                                    </div>
+                                </form>
+                            }
+        
+                            @if (myForm.get('insuranceType')?.value ==='health') {
+                                <form [formGroup]="healthFormGroup">
+                                    <div class="double-input margin-t-15">
+                                        <div class="single-input">
+                                            <span>Insurance</span>
+                                            <mat-form-field [ngClass]="{'valid-select': healthFormGroup.get('insurance')?.valid}">
+                                                <mat-label>Please select </mat-label>
+                                                <mat-select formControlName="insurance">
+                                                  @for (insurance of insurances; track insurance) {
+                                                    <mat-option [value]="insurance.value">{{insurance.viewValue}}</mat-option>
+                                                  }
+                                                </mat-select>
+                                            </mat-form-field>
+                                        </div>
+                                        <div class="single-input range-input">
+                                            <span>Franchise - {{healthFormGroup.get('franchise')?.value || '0'}}</span>
+                                            <input type="range"
+                                                   formControlName="franchise"
+                                                   name="franchise"
+                                                   min="0"
+                                                   max="2500"
+                                                   step="500"
+                                                   
+                                                   >
+                                            @if (healthFormGroup.get('franchise')?.touched && healthFormGroup.get('franchise')?.invalid) {
+                                                <small>This field is required</small>
+                                            }
+                                        </div>
+                                    </div>
+                                </form>
+                            }
+        
+                            
+        
+                            <div class="single-input">
+                                <span>Name & surname</span>
+                                <input type="text" formControlName="fullName" [ngClass]="{'valid-radio': myForm.get('fullName')?.valid}">
+                                @if (myForm.get('fullName')?.touched && myForm.get('fullName')?.invalid) {
+                                    <small>This field is required</small>
+                                }
                             </div>
-                        </form>
+        
+        
+                            <div class="single-input">
+                                <span>Email</span>
+                                <input type="email" formControlName="email" [ngClass]="{'valid-radio': myForm.get('email')?.valid}">
+                                @if (myForm.get('email')?.touched && myForm.get('email')?.invalid) {
+                                    <small>This field is required</small>
+                                }
+                            </div>
+        
+        
+                            <app-phone-number-input formControlName="phone"></app-phone-number-input>
+                        
+        
+        
+                            <div class="terms">
+                                <input id="terms" type="checkbox" formControlName="terms">
+                                <label for="terms">I have read the Privacy policy and I agreed with it.</label>
+                            </div>
+                            @if (myForm.get('terms')?.touched && myForm.get('terms')?.invalid) {
+                                <small>This field is required</small>
+                            }
+        
+                            <div class="button-container">
+                                <button type="button" (click)="onSubmit()">Submit</button>
+                            </div>
+                        </div>
                     }
-
-                    
-
-                    <div class="single-input">
-                        <span>Name & surname</span>
-                        <input type="text" formControlName="fullName" [ngClass]="{'valid-radio': myForm.get('fullName')?.valid}">
-                        @if (myForm.get('fullName')?.touched && myForm.get('fullName')?.invalid) {
-                            <small>This field is required</small>
-                        }
-                    </div>
-
-
-                    <div class="single-input">
-                        <span>Email</span>
-                        <input type="email" formControlName="email" [ngClass]="{'valid-radio': myForm.get('email')?.valid}">
-                        @if (myForm.get('email')?.touched && myForm.get('email')?.invalid) {
-                            <small>This field is required</small>
-                        }
-                    </div>
-
-
-                    <app-phone-number-input formControlName="phone"></app-phone-number-input>
-                
-
-
-                    <div class="terms">
-                        <input id="terms" type="checkbox" formControlName="terms">
-                        <label for="terms">I have read the Privacy policy and I agreed with it.</label>
-                    </div>
-                    @if (myForm.get('terms')?.touched && myForm.get('terms')?.invalid) {
-                        <small>This field is required</small>
+                    @if (showThanks) {
+                        <div class="thank-you-div">
+                            <h2>Thank you!</h2>
+                            <p>Form has been successfully submitted.</p>
+                        </div>
                     }
-
-                    <div class="button-container">
-                        <button type="button" (click)="onSubmit()">Submit</button>
-                    </div>
 
                 </form>
                 

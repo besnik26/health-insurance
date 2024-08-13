@@ -19,10 +19,37 @@ small{
         color: #8CC540!important;
     }
 }
+.form-cover{
+    transition: all 0.7s ease;
+    animation: zoomIn 0.4s ease-in;
+}
+.thank-you-div{
+    height: 550px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.7s ease;
+    animation: zoomIn 0.7s ease-in;
+    h2{
+        color: #8CC540;
+    }
+}
+@keyframes zoomIn{
+    from{
+        opacity: 0;
+        transform: scale(0.5);
+    }
+    to{
+        opacity: 1;
+        transform: scale(1);
+    }
+}
 .form{
     margin: 150px 0 150px 0;
     display: flex;
     justify-content: center;
+    transition: all 0.7s ease;
     .form-section{
         display: flex;
         justify-content: center;

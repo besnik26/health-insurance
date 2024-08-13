@@ -39,6 +39,7 @@ export class GlobalFormComponent implements OnInit, AfterViewInit{
   provisionFormGroup!:FormGroup;
   legalFormGroup!:FormGroup;
   healthFormGroup!:FormGroup;
+  showThanks:boolean = false;
 
   @ViewChild(PhoneNumberInputComponent) phoneInputComponent!: PhoneNumberInputComponent;
   constructor(private formBuilder: FormBuilder,){
@@ -195,20 +196,39 @@ export class GlobalFormComponent implements OnInit, AfterViewInit{
       if(this.myForm.get('insuranceType')?.value === 'car'){
         const modelData = this.getDataCar();    
         console.log(this.cleanObject(modelData));
+        this.showThanks = true;
+        setTimeout(() => this.resetForm(), 2000)
       } else if(this.myForm.get('insuranceType')?.value === 'provision'){
         const modelData = this.getDataProvision();    
         console.log(this.cleanObject(modelData));
+        this.showThanks = true;
+        setTimeout(() => this.resetForm(), 2000)
       } else if(this.myForm.get('insuranceType')?.value === 'legal'){
         const modelData = this.getDataLegal();    
         console.log(this.cleanObject(modelData));
+        this.showThanks = true;
+        setTimeout(() => this.resetForm(), 2000)
       } else if(this.myForm.get('insuranceType')?.value === 'health'){
         const modelData = this.getDataHealth();    
         console.log(this.cleanObject(modelData));
+        this.showThanks = true;
+        setTimeout(() => this.resetForm(), 2000)
       }
     }
     else{
       this.markFormGroupTouched(this.myForm);
     }
+  }
+
+  resetForm(){
+      this.showThanks = false;
+      this.provisionFormGroup.get('reason')?.reset();
+      this.provisionFormGroup.get('investmentPerMonth')?.setValue('0');
+      this.healthFormGroup.get('insurance')?.reset();
+      this.healthFormGroup.get('franchise')?.setValue('0');
+      this.legalFormGroup.reset();
+      this.carFormGroup.reset();
+      this.myForm.reset();
   }
 
   markFormGroupTouched(formGroup:FormGroup){

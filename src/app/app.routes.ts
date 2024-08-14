@@ -7,6 +7,7 @@ import { LegalInsuranceComponent } from './legal-insurance/legal-insurance.compo
 import { HealthInsuranceComponent } from './health-insurance/health-insurance.component';
 import { CompanyInsuranceComponent } from './company-insurance/company-insurance.component';
 import { PetInsuranceComponent } from './pet-insurance/pet-insurance.component';
+import { ContactComponent } from './contact/contact.component';
 export const routes: Routes = [
 
     { path: '', redirectTo: 'en/home', pathMatch: 'full' },
@@ -22,6 +23,7 @@ export const routes: Routes = [
             { path: 'health-insurance', component: HealthInsuranceComponent },
             { path: 'company-insurance', component: CompanyInsuranceComponent },
             { path: 'pet-insurance', component: PetInsuranceComponent },
+            { path: 'contact', component:ContactComponent},
             { path: '**', component: NotFoundComponent },
             
         ]

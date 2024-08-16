@@ -10,7 +10,7 @@
           <div class="mobile-menu" [class.open]="isMenuOpen" [class.close]="!isMenuOpen">
             <div class="nav-list">
               <ul class="header-nav">
-                <li class="nav-li" (click)="closeDropdown()"><a routerLinkActive="bold-text" (click)="scrollToTop()"  >
+                <li class="nav-li" (click)="closeDropdown()"><a routerLinkActive="bold-text" (click)="scrollToTop()" [routerLink]="['/', selectedLanguage, 'home']" >
                   Home
                 </a></li>
                 <li class="dropdown k-vergleich" (click)="toggleDropdown()">

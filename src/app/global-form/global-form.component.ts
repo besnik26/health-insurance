@@ -197,22 +197,22 @@ export class GlobalFormComponent implements OnInit, AfterViewInit{
         const modelData = this.getDataCar();    
         console.log(this.cleanObject(modelData));
         this.showThanks = true;
-        setTimeout(() => this.resetForm(), 2000)
+        setTimeout(() => this.resetForm(), 2500)
       } else if(this.myForm.get('insuranceType')?.value === 'provision'){
         const modelData = this.getDataProvision();    
         console.log(this.cleanObject(modelData));
         this.showThanks = true;
-        setTimeout(() => this.resetForm(), 2000)
+        setTimeout(() => this.resetForm(), 2500)
       } else if(this.myForm.get('insuranceType')?.value === 'legal'){
         const modelData = this.getDataLegal();    
         console.log(this.cleanObject(modelData));
         this.showThanks = true;
-        setTimeout(() => this.resetForm(), 2000)
+        setTimeout(() => this.resetForm(), 2500)
       } else if(this.myForm.get('insuranceType')?.value === 'health'){
         const modelData = this.getDataHealth();    
         console.log(this.cleanObject(modelData));
         this.showThanks = true;
-        setTimeout(() => this.resetForm(), 2000)
+        setTimeout(() => this.resetForm(), 2500)
       }
     }
     else{

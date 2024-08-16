@@ -9,9 +9,52 @@
                     You can always contact us in writing via the form. 
                      We will give you the best answer we have.
                 </p>
-                <button>
-                    Get offer now
-                </button>
+                <form [formGroup]="myForm">
+                    @if (!showThanks) {
+
+                        <div class="form-div">
+                            <div class="single-input">
+                                <span>Name and surname</span>
+                                <input type="text" formControlName="fullName" [ngClass]="{'valid-radio': myForm.get('fullName')?.valid}">
+                                @if (myForm.get('fullName')?.invalid && myForm.get('fullName')?.touched) {
+                                    <small>This field is required</small>
+                                }
+    
+                            </div>
+                            <div class="single-input">
+                                <span>Email</span>
+                                <input type="text" formControlName="email" [ngClass]="{'valid-radio': myForm.get('email')?.valid}">
+                                @if (myForm.get('email')?.invalid && myForm.get('email')?.touched) {
+                                    <small>This field is required</small>
+                                }
+    
+                            </div>
+                            <div class="single-input">
+                                <span>Subject</span>
+                                <input type="text" formControlName="subject" [ngClass]="{'valid-radio': myForm.get('subject')?.valid}">
+                                @if (myForm.get('subject')?.invalid && myForm.get('subject')?.touched) {
+                                    <small>This field is required</small>
+                                }
+    
+                            </div>
+                            <div class="single-input">
+                                <span>Message</span>
+                                <textarea name="" id="" rows="5" formControlName="message" [ngClass]="{'valid-radio': myForm.get('message')?.valid}"></textarea>
+                                @if (myForm.get('message')?.invalid && myForm.get('message')?.touched) {
+                                    <small>This field is required</small>
+                                }
+    
+                            </div>
+                            <button (click)="onSubmit()">Submit</button>
+                        </div>
+                    }
+                    @if(showThanks){
+                        <div class="thank-you-div">
+                            <h2>Thank you!</h2>
+                            <p>Form has been successfully submitted.</p>
+                        </div>
+                    }
+                </form>
             </div>
             <div class="img-div">
                 <img src="../../assets/images/contact/contact.svg" alt="besnik-beka">

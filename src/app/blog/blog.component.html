@@ -1,0 +1,38 @@
+
+<app-global-header
+    title="All important topics and information."
+    description="Here you will find important tips and information for your health, your wallet and your insurance. Enjoy reading."
+    imgSrc="../../assets/images/blogs/blog-img.svg"
+></app-global-header>
+<div class="container-fluid blog-section">
+  <div class="container">
+
+   
+
+    <div class="blog-main">
+      <div class="left-side">
+
+        <div class="blog-left">
+          @for (blog of displayedBlogs; track blog) {
+            <div class="blog-card">
+              <div class="img-div">
+                <img [src]="blog.imgUrl" alt="" >
+              </div> 
+              <div class="text-div">
+                <p>{{ blog.mainTitle }}</p>
+              </div>
+            </div>
+          }
+          
+        </div>
+        @if (!showMoreClicked) {
+
+          <button (click)="showMoreBlogs()">Show more</button> 
+        }
+      </div>
+      <div class="blog-right">
+        <input [(ngModel)]="searchInput" (input)="searchBlogs()"  type="text">
+      </div>
+    </div>
+  </div>
+</div>

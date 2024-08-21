@@ -1,6 +1,7 @@
 {
   "blogs": [
     {
+      "id":"1",
       "mainTitle": "Valuables insurance: the basics",
       "meta-title": "Valuables insurance: Comprehensive protection explained | Info Insurance",
       "meta-description": "Protect your valuable items with all-risk valuables insurance, which offers comprehensive protection for jewelry, art and more through all-risk policies.",
@@ -20,6 +21,7 @@
       "alt": "the-valuables-insurance"
     },
     {
+      "id":"2",
       "mainTitle": "Do I need legal expenses insurance?",
       "meta-title": "Do I need legal protection insurance? Find out now | Info Insurance",
       "meta-description": "Protect yourself from legal disputes with affordable legal protection insurance. Get professional advice, cover your legal costs and protect yourself against unjustified claims.",
@@ -35,6 +37,7 @@
       "alt": "occupational-accident-or-non-occupational-accident"
     },
     {
+      "id":"3",
       "mainTitle": "Occupational accident or non-occupational accident?",
       "meta-title": "Occupational accident insurance vs. non-occupational accident insurance | Info Insurance",
       "meta-description": "Ensure comprehensive protection with UVG accident insurance in Switzerland. Occupational and non-occupational accidents are insured, with the premiums being shared by the employer and employee.",
@@ -54,6 +57,7 @@
       "alt": "occupational-accident-or-not"
     },
     {
+      "id":"4",
       "mainTitle": "What is an accident for accident insurance purposes?",
       "meta-title": "Understanding accident insurance | Info Insurance",
       "meta-description": "Discover what exactly counts as an accident under accident insurance, how this differs from health insurance benefits and what this means for your claims.",
@@ -71,6 +75,7 @@
       "alt": "what-is-an-accident-for-accident-insurance"
     },
     {
+      "id":"5",
       "mainTitle": "Who pays: accident or health insurance?",
       "meta-title": "Accident insurance vs. health insurance: Who pays for injuries? | Insurance info",
       "meta-description": "Accident insurance or health insurance? Understand the key differences and the impact on insurance cover, especially for complex cases such as meniscus injuries or back problems.",
@@ -88,6 +93,7 @@
       "alt": "who-pays-accident-or-health-insurance"
     },
     {
+      "id":"6",
       "mainTitle": "What is an individual premium reduction (IPV)?",
       "meta-title": "Understanding the individual premium reduction | Info Insurance",
       "meta-description": "Understand how the individual premium reduction works in Switzerland, who is eligible for it and how this financial support is applied directly to your health insurance account.",
@@ -107,6 +113,7 @@
       "alt": "what-is-an-individual"
     },
     {
+      "id":"7",
       "mainTitle": "All risk household contents insurance",
       "meta-title": "All-risk household contents insurance: Comprehensive cover | Info Insurance",
       "meta-description": "Protect your valuables from mishaps with all-risk household contents insurance. The insurance cover includes accidental damage, theft and loss, even outside your home.",
@@ -123,6 +130,7 @@
       "alt": "all-risk home contents insurance"
     },
     {
+      "id":"8",
       "mainTitle": "How can you save money on basic insurance?",
       "meta-title": "Save money with basic insurance | Info Insurance",
       "meta-description": "Save money on basic insurance by choosing the right company, the right deductible and the right insurance model. Tips on optimal adjustment and notice periods.",
@@ -142,6 +150,7 @@
       "alt": "how-can-you-insure-your-basic-insurance"
     },
     {
+      "id":"9",
       "mainTitle": "VVG - for little premium, the perfect complement to KVG",
       "meta-title": "VVG: Indispensable supplement to the KVG for comprehensive cover | Info Insurance",
       "meta-description": "Find out how supplementary insurance (VVG) closes the gaps in your basic insurance (KVG), from medication and free choice of hospital to dental corrections, and why it is financially worthwhile.",
@@ -160,6 +169,7 @@
       "alt": "vvg-fur-few-pramie-die-perfekte"
     },
     {
+      "id":"10",
       "mainTitle": "Health risks in the KVG",
       "meta-title": "Health risks in basic insurance: medication and alternatives | Info Insurance",
       "meta-description": "Find out more about the health risks covered by basic health insurance (KVG), particularly in the area of medication and alternative medicine. Find out about costs, cover and restrictions so that you can make informed decisions.",
@@ -178,6 +188,7 @@
       "alt": "health-strictures-in-the-kvg"
     },
     {
+      "id":"11",
       "mainTitle": "How do I change and cancel my supplementary insurance?",
       "meta-title": "How to change and cancel your supplementary insurance | Info Insurance",
       "meta-description": "Change or cancel your supplementary insurance easily by taking the right steps. Get expert support to make sure you cancel your policy on time and get high-quality cover.",
@@ -197,6 +208,7 @@
       "alt": "how-do-I-change-and-know-mine"
     },
     {
+      "id":"12",
       "mainTitle": "Krankenkassenwechsel in der Schweiz",
       "meta-title": "Changing health insurance in Switzerland: Important considerations | Info Insurance",
       "meta-description": "Optimize your health insurance cover and save money by switching health insurers in Switzerland. Find out about notice periods, deadlines and benefits to make the best choice.",

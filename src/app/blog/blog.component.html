@@ -14,12 +14,12 @@
 
         <div class="blog-left">
           @for (blog of displayedBlogs; track blog) {
-            <div class="blog-card">
+            <div (click)="onBlogClick(blog.url)" class="blog-card">
               <div class="img-div">
                 <img [src]="blog.imgUrl" alt="" >
               </div> 
               <div class="text-div">
-                <p>{{ blog.mainTitle }}</p>
+                <h4>{{ blog.mainTitle }}</h4>
               </div>
             </div>
           }
@@ -27,11 +27,18 @@
         </div>
         @if (!showMoreClicked) {
 
-          <button (click)="showMoreBlogs()">Show more</button> 
+          <button class="show-button" (click)="showMoreBlogs()">Show more</button> 
         }
       </div>
       <div class="blog-right">
-        <input [(ngModel)]="searchInput" (input)="searchBlogs()"  type="text">
+        <div>
+          <input [(ngModel)]="searchInput" (input)="searchBlogs()"  type="text">
+        </div>
+        <div>
+          <h3>Latest blogs</h3>
+        </div>
+
+
       </div>
     </div>
   </div>

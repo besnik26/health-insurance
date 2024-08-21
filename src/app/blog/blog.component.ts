@@ -3,6 +3,8 @@ import { Component, OnInit } from '@angular/core';
 import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
 import { FormsModule } from '@angular/forms';
 import { GlobalHeaderComponent } from '../share/global-header/global-header.component';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-blog',
@@ -18,11 +20,12 @@ export class BlogComponent implements OnInit {
   allBlogs: any[] = [];
   searchInput: string = '';
   showMoreClicked: boolean = false;
-  selectedLanguage: string = 'de';
+  selectedLanguage: string = 'en';
 
   constructor(
     public translateService: TranslateService,
-    private http: HttpClient
+    private http: HttpClient,
+    private router: Router
   ) {
     this.selectedLanguage = this.translateService.currentLang || 'en';
     this.translateService.onLangChange.subscribe((event: LangChangeEvent) => {
@@ -34,9 +37,13 @@ export class BlogComponent implements OnInit {
   ngOnInit(): void {
     this.fetchBlogs();
   }
+  onBlogClick(blogUrl: any): void {
+    const url =`/${this.selectedLanguage}/blogs/${blogUrl}`;
+    window.open(url, '_blank', 'noopener');
+  }
 
   fetchBlogs(): void {
-    const url: string = `../../../assets/blogs/${this.selectedLanguage}-blogs.json`;
+    const url: string = `../../../../assets/blogs/${this.selectedLanguage}-blogs.json`;
     this.http.get<any>(url).subscribe(
       data => {
         this.allBlogs = data.blogs || [];

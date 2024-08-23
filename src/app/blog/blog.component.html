@@ -13,32 +13,46 @@
       <div class="left-side">
 
         <div class="blog-left">
-          @for (blog of displayedBlogs; track blog) {
-            <div (click)="onBlogClick(blog.url)" class="blog-card">
-              <div class="img-div">
-                <img [src]="blog.imgUrl" alt="" >
-              </div> 
-              <div class="text-div">
-                <h4>{{ blog.mainTitle }}</h4>
-              </div>
+          @if (noBlogsFound) {
+            <div class="not-found">
+              <h1>Blogs not found</h1>
             </div>
+          } 
+          @else {
+            @for (blog of displayedBlogs; track blog) {
+              <div (click)="onBlogClick(blog.url)" class="blog-card">
+                <div class="img-div">
+                  <img [src]="blog.imgUrl" alt="" >
+                </div> 
+                <div class="text-div">
+                  <h4>{{ blog.mainTitle }}</h4>
+                  <p><img class="clock-img" src="../../../assets/images/blogs/clock.png">{{ blog.date }}</p>
+                </div>
+              </div>
+            }
           }
           
         </div>
         @if (!showMoreClicked) {
-
           <button class="show-button" (click)="showMoreBlogs()">Show more</button> 
         }
       </div>
       <div class="blog-right">
-        <div>
+        <div class="search-div">
           <input [(ngModel)]="searchInput" (input)="searchBlogs()"  type="text">
+          <img src="../../assets/images/blogs/search-icon.svg" alt="search">
         </div>
-        <div>
+        <div class="blogs">
           <h3>Latest blogs</h3>
+          @for (blog of latestBlogs; track blog) {
+            <div class="blog-card" (click)="onBlogClick(blog.url)">
+              <div class="img-div">
+                <img [src]="blog.imgUrl" alt="">
+              </div>
+              <h5>{{ blog.mainTitle }}</h5>
+            </div>
+          }
         </div>
-
-
       </div>
     </div>
   </div>

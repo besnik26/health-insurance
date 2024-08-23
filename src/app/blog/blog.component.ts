@@ -18,9 +18,11 @@ export class BlogComponent implements OnInit {
   blogsPerPage: number = 4;
   displayedBlogs: any[] = [];
   allBlogs: any[] = [];
+  latestBlogs: any[] = [];
   searchInput: string = '';
   showMoreClicked: boolean = false;
   selectedLanguage: string = 'en';
+  noBlogsFound: boolean = false;
 
   constructor(
     public translateService: TranslateService,
@@ -47,7 +49,12 @@ export class BlogComponent implements OnInit {
     this.http.get<any>(url).subscribe(
       data => {
         this.allBlogs = data.blogs || [];
+
+        this.allBlogs.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+
         this.displayedBlogs = this.allBlogs.slice(0, this.blogsPerPage);
+
+        this.latestBlogs = this.allBlogs.slice(0, 5);
       },
       error => {
         console.error('Error fetching blogs:', error);
@@ -68,6 +75,7 @@ export class BlogComponent implements OnInit {
     if (!this.searchInput.trim()) {
       this.displayedBlogs = this.allBlogs.slice(0, this.blogsPerPage);
       this.showMoreClicked = false; 
+      this.noBlogsFound = false;
     } else {
       
       this.displayedBlogs = this.allBlogs.filter(blog =>
@@ -75,6 +83,7 @@ export class BlogComponent implements OnInit {
       );
       
       this.showMoreClicked = true;
+      this.noBlogsFound = this.displayedBlogs.length === 0; 
     }
   }
 }

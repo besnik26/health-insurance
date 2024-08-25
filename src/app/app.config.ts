@@ -1,3 +1,4 @@
+import { NG_EVENT_PLUGINS } from "@taiga-ui/event-plugins";
 import { ApplicationConfig, importProvidersFrom } from '@angular/core';
 import { provideRouter } from '@angular/router';
 
@@ -36,5 +37,6 @@ export const appConfig: ApplicationConfig = {
       HttpClientModule,
       TranslateModule.forRoot(provideTranslation()),
     ]), provideAnimationsAsync(),
-  ]
+        NG_EVENT_PLUGINS
+    ]
 };

@@ -1,0 +1,29 @@
+<section class="container-fluid testimonial">
+    <div class="container">
+        <tui-carousel
+            [duration]="3700"
+            [draggable]="true"
+            [(index)]="index"
+            [itemsCount]="itemsCount"
+            class="carousel-main"
+        >
+            @for (item of items; track $index) {
+
+                <ng-container>
+                    <div *tuiItem  draggable="false" class="custom-div">
+                        <h2>{{ item.name }}</h2>
+                        <p>{{item.message}}</p>
+                    </div>
+                </ng-container>
+            }
+        </tui-carousel>
+        <tui-pagination
+            size="s"
+            class="pagination"
+            [length]="items.length"
+            [(index)]="index"
+        ></tui-pagination>
+    </div>
+</section>
+
+

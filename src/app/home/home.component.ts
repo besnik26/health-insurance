@@ -4,11 +4,12 @@ import { Component } from '@angular/core';
 import { GlobalFormComponent } from '../global-form/global-form.component';
 import { RouterLink } from '@angular/router';
 import { GlobalHeaderComponent } from '../share/global-header/global-header.component';
+import { TestimonialComponent } from '../share/testimonial/testimonial.component';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [GlobalFormComponent, RouterLink, GlobalHeaderComponent],
+  imports: [GlobalFormComponent, RouterLink, GlobalHeaderComponent, TestimonialComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })

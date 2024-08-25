@@ -1,7 +1,11 @@
 <section class="container-fluid testimonial">
     <div class="container">
+        <div class="testimonial-info">
+            <h1>Satisfied customers are our goal</h1>
+            <p>In order to provide our customers with the best possible advice and exceed the highest requirements, we work as a team to ensure your satisfaction.</p>
+        </div>
         <tui-carousel
-            [duration]="3700"
+            [duration]="3000"
             [draggable]="true"
             [(index)]="index"
             [itemsCount]="itemsCount"
@@ -11,7 +15,12 @@
 
                 <ng-container>
                     <div *tuiItem  draggable="false" class="custom-div">
-                        <h2>{{ item.name }}</h2>
+                        <div class="info-div">
+                            <div class="img-div">
+                                <img src="../../../assets/images/testimonial/blank-profile.jpg" alt="profile-pic besnik beka">
+                            </div>
+                            <h2>{{ item.name }}</h2>
+                        </div>
                         <p>{{item.message}}</p>
                     </div>
                 </ng-container>

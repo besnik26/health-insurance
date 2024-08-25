@@ -21,9 +21,6 @@ export class TestimonialComponent implements OnInit{
     { name: 'User-4', message: 'This website is very good haha.' },
     { name: 'User-5', message: 'This website is very nice haha.' },
     { name: 'User-6', message: 'This website is very bad haha.' },
-    { name: 'User-7', message: 'This website is very good haha.' },
-    { name: 'User-8', message: 'This website is very nice haha.' },
-    { name: 'User-9', message: 'This website is very bad haha.' },
   ];
 
   constructor(private ngZone: NgZone) {

@@ -15,12 +15,30 @@ export class TestimonialComponent implements OnInit{
   itemsCount = 3;
   
   protected readonly items = [
-    { name: 'User-1', message: 'This website is very good haha.' },
-    { name: 'User-2', message: 'This website is very nice haha.' },
-    { name: 'User-3', message: 'This website is very bad haha.' },
-    { name: 'User-4', message: 'This website is very good haha.' },
-    { name: 'User-5', message: 'This website is very nice haha.' },
-    { name: 'User-6', message: 'This website is very bad haha.' },
+    { name: 'Maurizia Rossa', 
+      message: 'Thanks to your health insurance, I got the best treatment without worrying about the costs. It’s been a life-saver!',
+      imgUrl:'../../../assets/images/testimonial/profile-1.jpg' 
+    },
+    { name: 'Anna Ross', 
+      message: 'Your legal insurance gave me peace of mind during a difficult time. The support was outstanding.',
+      imgUrl:'../../../assets/images/testimonial/profile-2.jpg' 
+    },
+    { name: 'Micaila Toma',
+      message: 'When my dog needed surgery, your pet insurance took care of everything. Thank you for caring!',
+      imgUrl:'../../../assets/images/testimonial/profile-3.jpg' 
+    },
+    { name: 'Hubert Jones', 
+      message: 'When I had an accident, your car insurance was there to cover everything quickly and hassle-free. Highly recommended!',
+      imgUrl:'../../../assets/images/testimonial/profile-7.jpg' 
+    },
+    { name: 'Lana Petersen', 
+      message: 'Our business faced an unexpected challenge, but your company insurance had us covered. Couldn’t ask for better protection!',
+      imgUrl:'../../../assets/images/testimonial/profile-5.jpg'
+    },
+    { name: 'Amara Mathews', 
+      message: 'The provision plan you offered secured my future. It’s the smartest investment I’ve ever made!',
+      imgUrl:'../../../assets/images/testimonial/profile-9.jpg' 
+    },
   ];
 
   constructor(private ngZone: NgZone) {

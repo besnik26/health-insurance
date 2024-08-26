@@ -5,7 +5,7 @@
             <p>In order to provide our customers with the best possible advice and exceed the highest requirements, we work as a team to ensure your satisfaction.</p>
         </div>
         <tui-carousel
-            [duration]="3000"
+            [duration]="3200"
             [draggable]="true"
             [(index)]="index"
             [itemsCount]="itemsCount"
@@ -17,9 +17,9 @@
                     <div *tuiItem  draggable="false" class="custom-div">
                         <div class="info-div">
                             <div class="img-div">
-                                <img src="../../../assets/images/testimonial/blank-profile.jpg" alt="profile-pic besnik beka">
+                                <img [src]="item.imgUrl" alt="profile-pic besnik beka">
                             </div>
-                            <h2>{{ item.name }}</h2>
+                            <h3>{{ item.name }}</h3>
                         </div>
                         <p>{{item.message}}</p>
                     </div>

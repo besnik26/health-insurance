@@ -1,0 +1,35 @@
+@import '../../../styles/index.scss';
+
+
+.container{
+    max-width: 1268px; 
+}
+.content-main{
+    display: flex;
+    justify-content: center;
+    margin: 130px 0px 130px 0;
+    .content-cover{
+        display: flex;
+        flex-direction: column;
+        .content-div{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            column-gap: 80px;
+            .img-div{
+                max-width: 500px;
+                img{
+                    width: 100%;
+                    border-radius: 16px;
+                    // border: 1px solid black;
+                }
+            }
+            .text-div{
+                max-width: 500px;
+            }
+        }
+        .cd-1{
+            margin-bottom: 50px;
+        }
+    }
+}

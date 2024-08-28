@@ -1,15 +1,18 @@
 import { Component } from '@angular/core';
 import { GlobalHeaderComponent } from '../share/global-header/global-header.component';
 import { GlobalAccordionComponent } from '../share/global-accordion/global-accordion.component';
+import { InsuranceContentComponent } from '../share/insurance-content/insurance-content.component';
 
 @Component({
   selector: 'app-health-insurance',
   standalone: true,
-  imports: [GlobalHeaderComponent, GlobalAccordionComponent],
+  imports: [GlobalHeaderComponent, GlobalAccordionComponent, InsuranceContentComponent],
   templateUrl: './health-insurance.component.html',
   styleUrl: './health-insurance.component.scss'
 })
 export class HealthInsuranceComponent {
+  firstDesc = "Our health insurance plans are designed to provide you and your loved ones with comprehensive protection. From routine check-ups to emergency treatments, we ensure that you have access to the best healthcare services without the burden of overwhelming medical bills. With our extensive network of healthcare providers, you can choose the right care for every stage of life.";
+  secondDesc = "When it comes to your health, nothing is more important than peace of mind. Our health insurance plans offer coverage for a wide range of medical needs, including preventive care, chronic condition management, and specialist consultations. Whether you're planning for the unexpected or managing ongoing health concerns, our plans are tailored to keep you and your family healthy and secure.";
   accordionData = [
     {
       title: 'What does your health insurance cover?', 

@@ -1,11 +1,12 @@
 <div class="container-fluid accordion">
     <div class="container">
+        <h2>Frequently asked questions by our clients</h2>
         <div class="accordion-cover">
 
-            <tui-accordion>
+            <tui-accordion class="acc-div">
                 @for (item of dataArray; track $index) {
             
-                    <tui-accordion-item>
+                    <tui-accordion-item class="acc-item">
                         {{item.title}}
                         <ng-template tuiAccordionItemContent>
                             {{item.content}}

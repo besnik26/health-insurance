@@ -1,15 +1,18 @@
 import { Component } from '@angular/core';
 import { GlobalHeaderComponent } from '../share/global-header/global-header.component';
 import { GlobalAccordionComponent } from '../share/global-accordion/global-accordion.component';
+import { InsuranceContentComponent } from '../share/insurance-content/insurance-content.component';
 
 @Component({
   selector: 'app-provision',
   standalone: true,
-  imports: [GlobalHeaderComponent, GlobalAccordionComponent],
+  imports: [GlobalHeaderComponent, GlobalAccordionComponent, InsuranceContentComponent],
   templateUrl: './provision.component.html',
   styleUrl: './provision.component.scss'
 })
 export class ProvisionComponent {
+  firstDesc = "Planning for the future is essential, and our provision insurance plans are here to help you build a secure financial foundation. Whether you're saving for retirement, education, or other long-term goals, our tailored solutions provide the flexibility and growth potential you need. Let us help you prepare for tomorrow, today."
+  secondDesc = "Your future deserves careful planning, and our provision insurance is designed to help you achieve your financial objectives. With options that include retirement savings, life insurance, and investment plans, we offer the tools you need to create a robust financial strategy. Start planning for a brighter future with our expert guidance and comprehensive provision plans."
   accordionData = [
     {
       title: 'What does your provision insurance cover?', 

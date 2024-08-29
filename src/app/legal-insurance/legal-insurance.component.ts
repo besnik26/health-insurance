@@ -1,15 +1,18 @@
 import { Component } from '@angular/core';
 import { GlobalHeaderComponent } from '../share/global-header/global-header.component';
 import { GlobalAccordionComponent } from '../share/global-accordion/global-accordion.component';
+import { InsuranceContentComponent } from '../share/insurance-content/insurance-content.component';
 
 @Component({
   selector: 'app-legal-insurance',
   standalone: true,
-  imports: [GlobalHeaderComponent, GlobalAccordionComponent],
+  imports: [GlobalHeaderComponent, GlobalAccordionComponent,InsuranceContentComponent],
   templateUrl: './legal-insurance.component.html',
   styleUrl: './legal-insurance.component.scss'
 })
 export class LegalInsuranceComponent {
+  firstDesc = "Navigating legal challenges can be overwhelming, but with our legal insurance, you're never alone. Our plans offer access to expert legal advice and representation for a variety of issues, including family law, employment disputes, and property matters. With our support, you can face any legal situation with confidence, knowing that your rights are protected."
+  secondDesc = "Legal matters can be costly and complicated, but our legal insurance makes it easier and more affordable to get the help you need. Whether you're dealing with a personal dispute or a complex legal issue, our insurance plans provide you with the coverage necessary to secure professional legal assistance. Protect yourself and your family with our comprehensive legal insurance solutions."
   accordionData = [
     {
       title: 'What legal matters are covered under your insurance?', 

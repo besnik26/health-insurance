@@ -1,15 +1,18 @@
 import { Component } from '@angular/core';
 import { GlobalHeaderComponent } from '../share/global-header/global-header.component';
 import { GlobalAccordionComponent } from '../share/global-accordion/global-accordion.component';
+import { InsuranceContentComponent } from '../share/insurance-content/insurance-content.component';
 
 @Component({
   selector: 'app-car-insurance',
   standalone: true,
-  imports: [GlobalHeaderComponent, GlobalAccordionComponent],
+  imports: [GlobalHeaderComponent, GlobalAccordionComponent, InsuranceContentComponent],
   templateUrl: './car-insurance.component.html',
   styleUrl: './car-insurance.component.scss'
 })
 export class CarInsuranceComponent {
+  firstDesc = "Accidents happen, but with our car insurance, you can drive with confidence knowing that you're protected. Our policies cover everything from minor fender benders to major collisions, ensuring that your vehicle is repaired and you're back on the road in no time. We offer flexible coverage options to meet your needs and budget, so you can enjoy peace of mind behind the wheel.";
+  secondDesc = "Your car is more than just a mode of transportation; it's an essential part of your daily life. Our comprehensive car insurance plans provide extensive coverage, including protection against theft, vandalism, and natural disasters. We also offer additional benefits like roadside assistance and rental car coverage, so you're never left stranded in an emergency.";
   accordionData = [
     {
       title: 'What types of car insurance do you offer?', 

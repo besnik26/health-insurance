@@ -1,15 +1,18 @@
 import { Component } from '@angular/core';
 import { GlobalHeaderComponent } from '../share/global-header/global-header.component';
 import { GlobalAccordionComponent } from '../share/global-accordion/global-accordion.component';
+import { InsuranceContentComponent } from '../share/insurance-content/insurance-content.component';
 
 @Component({
   selector: 'app-company-insurance',
   standalone: true,
-  imports: [GlobalHeaderComponent, GlobalAccordionComponent],
+  imports: [GlobalHeaderComponent, GlobalAccordionComponent, InsuranceContentComponent],
   templateUrl: './company-insurance.component.html',
   styleUrl: './company-insurance.component.scss'
 })
 export class CompanyInsuranceComponent {
+  firstDesc = "Running a business comes with its share of risks, but with our company insurance, you can protect your enterprise from unexpected challenges. Our policies cover property damage, liability claims, and business interruptions, ensuring that your operations continue smoothly even in difficult times. Trust us to safeguard your business so you can focus on growth.";
+  secondDesc = "Every business is unique, and our company insurance plans are designed to meet the specific needs of your organization. Whether you're a small startup or a large corporation, we offer customizable coverage options that protect your assets, employees, and reputation. Let us provide the security you need to thrive in today's competitive market.";
   accordionData = [
     {
       title: 'What types of coverage are included in your company insurance?', 

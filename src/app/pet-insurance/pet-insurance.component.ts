@@ -2,11 +2,12 @@ import { Component } from '@angular/core';
 import { GlobalHeaderComponent } from '../share/global-header/global-header.component';
 import { GlobalAccordionComponent } from '../share/global-accordion/global-accordion.component';
 import { InsuranceContentComponent } from '../share/insurance-content/insurance-content.component';
+import { GlobalFormComponent } from '../global-form/global-form.component';
 
 @Component({
   selector: 'app-pet-insurance',
   standalone: true,
-  imports: [GlobalHeaderComponent, GlobalAccordionComponent, InsuranceContentComponent],
+  imports: [GlobalHeaderComponent, GlobalAccordionComponent, InsuranceContentComponent, GlobalFormComponent],
   templateUrl: './pet-insurance.component.html',
   styleUrl: './pet-insurance.component.scss'
 })

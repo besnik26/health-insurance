@@ -38,7 +38,7 @@
         }
       }
       .k-vergleich{
-        min-width: 198px;
+        min-width: 91px;
         text-align: center;
         a{
           color: #186cce;
@@ -101,9 +101,9 @@
           &.show-dropdown {
             display: flex;
             z-index: -1;
-            width: 530px;
+            width: 210px;
             max-width: 750px;
-            min-height: 304px;
+            min-height: 275px;
             border-radius: 16px;
             background-color: #186cce;
             padding: 1px;
@@ -121,7 +121,7 @@
             }
             .dropdown-div{
               display: flex;
-              justify-content: center;
+              justify-content: flex-start;
               column-gap: 30px;
               background-color: white;
               border-radius: 16px;

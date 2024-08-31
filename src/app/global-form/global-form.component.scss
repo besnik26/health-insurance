@@ -12,6 +12,9 @@ small{
 }
 .max-w-200{
     max-width: 200px;
+    @include mobile-view{
+        max-width: 48%;
+    }
 }
 .valid-radio{
     border: 1px solid #8CC540!important;
@@ -60,7 +63,7 @@ small{
         column-gap: 70px;
         @include mobile-view{
             flex-direction: column-reverse;
-            row-gap: 20px;
+            row-gap: 30px;
             padding: 0 16px;
         }
         .form-div{
@@ -92,11 +95,18 @@ small{
                 max-width: 199px;
                 width: 100%;
                 @include mobile-view{
-                    max-width: 150px;
+                    max-width: 48%;
                 }
+            }
+            .cover-label-2{
+                width: 100%;
             }
             .radio-input-image-only{
                 padding: 0 33px!important;
+                justify-content: center;
+                @include mobile-view{
+                    padding:  0 21px!important;
+                }
             }
             .radio-input{
                 // border: 1px solid black;
@@ -171,6 +181,18 @@ small{
                 }
                
             }
+
+            .double-input-2{
+                display: flex;
+                justify-content: center;
+                column-gap: 16px;
+                width: 48%;
+                @include mobile-view{
+                    column-gap: 10px;
+                }
+               
+            }
+            
             .si-center{
                 align-items: center!important;
             }

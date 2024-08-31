@@ -4,49 +4,6 @@
     max-width: 1268px; 
 }
 
-.main{
-    display: flex;
-    justify-content: center;
-    padding: 200px 0 180px 0;
-    // background-color: #fbfcfe;
-    background-color: #f9f9f9;    ;
-    .hero{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        column-gap: 100px;
-    }
-    .text-div{
-        max-width: 450px;
-        h1{
-            // color: #8CC540;
-        }
-        p{
-            margin: 5px 0 15px 0;
-        }
-
-        button{
-            max-width: 150px;
-            width: 100%;
-            height: 35px;
-            border-radius: 16px;
-            background-color: #8CC540;
-            color: white;
-            border: none;
-            outline: none;
-            cursor: pointer;
-        }
-    }
-    .img-div{
-        max-width: 400px;
-        width: 100%;
-        img{
-            width: 100%;
-        }
-    }
-}
-
-
 .services{
     display: flex;
     justify-content: center;
@@ -60,6 +17,9 @@
             width: 100%;
             p{
                 margin: 5px 0 25px 0;
+                @include mobile-view{
+                    padding: 0 16px;
+                }
             }
         }
     
@@ -71,6 +31,24 @@
             column-gap: 25px;
             row-gap: 25px;
             width: 100%;
+            @include mobile-view{
+                column-gap: 16px;
+                row-gap: 16px;
+                padding: 0 16px;
+                .card{
+                    width: 47.3%!important;
+                    height: 156px!important;
+                    text-align: center;
+                    .card-img{
+                        height: 55px!important;
+                        width: 55px!important;
+                        margin-bottom: 6px!important;
+                    }
+                    h3{
+                        font-size: 16px!important;
+                    }
+                }
+            }
     
             .card{
                 width: 280px;
@@ -162,6 +140,26 @@
         align-items: center;
         justify-content: center;
         column-gap: 80px;
+        @include mobile-view{
+            flex-direction: column-reverse;
+            padding: 0 16px;
+            row-gap: 30px;
+            .photo-section{
+                height: auto!important;
+                display: flex;
+                justify-content: center;
+                .photo-1{
+                    display: none;
+                }
+                .photo-2{
+                    max-width: 100%!important;
+                    position: relative!important;
+                }
+            }
+            .text-section{
+                text-align: center;
+            }
+        }
         .photo-section{
             max-width: 450px;
             position: relative;

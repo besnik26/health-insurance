@@ -50,19 +50,31 @@ small{
     display: flex;
     justify-content: center;
     transition: all 0.7s ease;
+    @include mobile-view{
+        margin: 80px 0 80px 0;
+    }
     .form-section{
         display: flex;
         justify-content: center;
         align-items: center;
         column-gap: 70px;
+        @include mobile-view{
+            flex-direction: column-reverse;
+            row-gap: 20px;
+            padding: 0 16px;
+        }
         .form-div{
             max-width: 475px;
             max-height: 620px;
             width: 100%;
             background-color: white;
             box-shadow: #64646f33 0 7px 29px;
-            border-radius: 45px;
+            border-radius: 40px;
             padding: 20px 30px;
+            @include mobile-view{
+                padding: 20px 16px;
+                border-radius: 30px;
+            }
             .insurance-type{
                 display: flex;
                 justify-content: center;
@@ -70,11 +82,18 @@ small{
                 row-gap: 16px;
                 flex-wrap: wrap;
                 margin: 10px 0 0 0;
+                @include mobile-view{
+                    column-gap: 10px;
+                    row-gap: 11px;
+                }
                
             }
             .cover-label{ 
                 max-width: 199px;
                 width: 100%;
+                @include mobile-view{
+                    max-width: 150px;
+                }
             }
             .radio-input-image-only{
                 padding: 0 33px!important;
@@ -92,6 +111,9 @@ small{
                 label{
                     margin-left: 5px;
                     color: #a5a5a5;
+                    @include mobile-view{
+                        line-height: 1.1;
+                    }
                 }
                 input{
                     display: none;
@@ -144,7 +166,9 @@ small{
                 display: flex;
                 justify-content: center;
                 column-gap: 16px;
-                // margin-top: 15px;
+                @include mobile-view{
+                    column-gap: 10px;
+                }
                
             }
             .si-center{
@@ -234,6 +258,14 @@ small{
             border-radius: 16px;
             max-width: 550px;
             max-height: 500px;
+            @include mobile-view{
+                max-height: 660px;
+                padding: 30px 16px;
+                .text-desc-div{
+                    text-align: center;
+                    margin-bottom: 15px;
+                }
+            }
             ul{
                 // margin-top: 10px;
                 list-style: none;

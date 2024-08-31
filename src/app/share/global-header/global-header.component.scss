@@ -8,19 +8,23 @@
     display: flex;
     justify-content: center;
     padding: 200px 0 180px 0;
-    // background-color: #fbfcfe;
-    background-color: #f9f9f9;    ;
+    background-color: #f9f9f9;    
+    @include mobile-view{
+        padding: 120px 0 100px;
+    }
     .hero{
         display: flex;
         align-items: center;
         justify-content: center;
         column-gap: 100px;
+        @include mobile-view{
+            flex-direction: column-reverse;
+            row-gap: 20px;
+            padding: 0 16px;
+        }
     }
     .text-div{
         max-width: 450px;
-        h1{
-            // color: #8CC540;
-        }
         p{
             margin: 5px 0 15px 0;
         }
@@ -35,6 +39,9 @@
             border: none;
             outline: none;
             cursor: pointer;
+        }
+        @include mobile-view{
+            text-align: center;
         }
     }
     .img-div{

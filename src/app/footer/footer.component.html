@@ -1,137 +1,104 @@
 <div class="full-width">
-    <div class="position-absolut">
-      <div class="subscribe">
-        <div class="content">
-          <h3>
-            Newsletter
-            </h3>
-          <p>
-            ss
-          </p>
-        </div>
-        <div class="form">
-          <form >
-            <div class="input">
-              <input type="email" placeholder="Ihre E-Mail" formControlName="email">
-              <button (click)="onSend()" [disabled]="isSubmitting">
-                Submit              
-                 </button>
-            </div>
-            <div class="errors">
-              @if (subscribeFormSubmitted && subscribeForm.get('email')?.errors?.['required']) {
-                <span class="error">
-                    error                
-                </span>
-              }
-              @if (subscribeFormSubmitted && subscribeForm.get('email')?.hasError('pattern')) {
-                <span class="error">
-                error                  
-                </span>
-              }
-            </div>
-          </form>
-        </div>
+  <div class="position-absolute">
+    <div class="subscribe">
+      <div class="content">
+        <h3>Newsletter</h3>
+        <p>ss</p>
+      </div>
+      <div class="form">
+        <form>
+          <div class="input">
+            <input
+              type="email"
+              placeholder="Ihre E-Mail"
+              formControlName="email"
+            />
+            <button (click)="onSend()" [disabled]="isSubmitting">Submit</button>
+          </div>
+          <div class="errors">
+            @if (subscribeFormSubmitted &&
+            subscribeForm.get('email')?.errors?.['required']) {
+            <span class="error"> error </span>
+            } @if (subscribeFormSubmitted &&
+            subscribeForm.get('email')?.hasError('pattern')) {
+            <span class="error"> error </span>
+            }
+          </div>
+        </form>
       </div>
     </div>
-    <div class="custom-container">
-      <div class="footer-section">
-        <div class="footer">
-          <div class="media">
-            <div class="img">
-              <!-- <img src="../../../assets/images/footer/footer-logo.svg" alt="Swiss Home Finance"> -->
-            </div>
-            <div class="social-media">
-              <a href="https://www.facebook.com/SwissHomeFinance/" target="_blank">
-                <!-- <img ngSrc="../../../assets/images/footer/facebook.svg" alt="Facebook" height="32" width="32"> -->
-              </a>
-              <a href="https://www.instagram.com/swisshomefinance_/" target="_blank">
-                <!-- <img ngSrc="../../../assets/images/footer/instagram.svg" alt="Instagram" height="32" width="32"> -->
-              </a>
-              <a href="https://twitter.com/SwissHF" target="_blank">
-                <!-- <img ngSrc="../../../assets/images/footer/twitter.svg" alt="Twitter" height="32" width="32"> -->
-              </a>
-              <a href="https://www.linkedin.com/company/swiss-home-finance/" target="_blank">
-                <!-- <img ngSrc="../../../assets/images/footer/linkedin.svg" alt="LinkedIn" height="32" width="32"> -->
-              </a>
-              <a href="https://www.pinterest.co.uk/swisshomefinance/" target="_blank">
-                <!-- <img ngSrc="../../../assets/images/footer/pinterest.svg" alt="Pinterest" height="32" width="32"> -->
-              </a>
-            </div>
+  </div>
+  <div class="custom-container">
+    <div class="footer-section">
+      <div class="footer">
+        <div class="media">
+          <div class="img">
+            <img src="../../assets/images/logo.svg" alt="logo" />
           </div>
-          <div class="work-hours">
-            <ul>
-              <li>
-                Open hours
-            </li>
-              <li>
-                Monday-Friday
-            </li>
-              <li>
-                08:00 - 12:00
-            </li>
-              <li>
-                08:00 - 12:00
-              </li>
-            </ul>
-          </div>
-          <div class="contact">
-            <ul>
-              <li>
-                Contact              
-            </li>
-              <li>
-                <a href="mailto: info@swiss-hf.ch">
-                  {{ 'info@swiss-hf.ch' }}
-                </a>
-              </li>
-              <li>
-                <a href="mailto: bewerbung@swiss-hf.ch">
-                  {{ 'bewerbung@swiss-hf.ch' }}
-                </a>
-              </li>
-            </ul>
-          </div>
-          <div class="tel">
-            <ul>
-              <li>
-            Phone              
-            </li>
-              <li>
-                <a href="tel: +41 62 534 99 63">
-                    tel: +41 62 534 99 63
-                </a>
-              </li>
-              <li>
-                <a href="tel: +41 41 552 54 00">
-                    tel: +41 62 534 99 63
-                </a>
-              </li>
-            </ul>
+          <div class="social-media">
+            <a><img src="../../assets/images/footer/facebook.svg" alt=""></a>
+            <a><img src="../../assets/images/footer/instagram.svg" alt=""></a>
+            <a><img src="../../assets/images/footer/linkedin.svg" alt=""></a>
+            <a><img src="../../assets/images/footer/twitter.svg" alt=""></a>
           </div>
         </div>
-        <div class="rights">
-          <div class="text">
-            <h6>
-
-
-ss            </h6>
-          </div>
-          <div class="links">
-            <ul>
-              <li>
-                <a>
-                  Legal Notices |
-                </a>
-              </li>
-              <li>
-                <a>
-                     Data protection                
-                </a>
-              </li>
-            </ul>
-          </div>
+        <div class="work-hours">          
+          <ul>
+            <li>Open hours</li>
+            <li>Monday-Friday</li>
+            <li>08:00 - 12:00</li>
+            <li>08:00 - 12:00</li>
+          </ul>
+        </div>
+        <div class="contact">
+          <ul>
+            <li>Contact</li>
+            <li>
+              <a href="mailto: health.insurance@health-insurance.com">
+                {{ "info@h-insurance.com" }}
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="tel">
+          <ul>
+            <li>Services</li>
+            <li>
+              <a> Health Insurance </a>
+            </li>
+            <li>
+              <a> Provision </a>
+            </li>
+            <li>
+              <a> Legal Insurance </a>
+            </li>
+            <li>
+              <a> Car Insurance </a>
+            </li>
+            <li>
+              <a> Pet Insurance </a>
+            </li>
+            <li>
+              <a> Company Insurance </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="rights">
+        <div class="text">
+          <h6>ss</h6>
+        </div>
+        <div class="links">
+          <ul>
+            <li>
+              <a> Legal Notices | </a>
+            </li>
+            <li>
+              <a> Data protection </a>
+            </li>
+          </ul>
         </div>
       </div>
     </div>
   </div>
-  
+</div>

@@ -3,7 +3,7 @@
     <div class="subscribe">
       <div class="content">
         <h3>Newsletter</h3>
-        <p>ss</p>
+        
       </div>
       <div class="form">
         <form>
@@ -18,10 +18,10 @@
           <div class="errors">
             @if (subscribeFormSubmitted &&
             subscribeForm.get('email')?.errors?.['required']) {
-            <span class="error"> error </span>
+            <span class="error"> This field is required </span>
             } @if (subscribeFormSubmitted &&
             subscribeForm.get('email')?.hasError('pattern')) {
-            <span class="error"> error </span>
+            <span class="error"> This field is required </span>
             }
           </div>
         </form>
@@ -44,7 +44,7 @@
         </div>
         <div class="work-hours">          
           <ul>
-            <li>Open hours</li>
+            <li class="title">Open hours</li>
             <li>Monday-Friday</li>
             <li>08:00 - 12:00</li>
             <li>08:00 - 12:00</li>
@@ -52,7 +52,7 @@
         </div>
         <div class="contact">
           <ul>
-            <li>Contact</li>
+            <li class="title">Contact</li>
             <li>
               <a href="mailto: health.insurance@health-insurance.com">
                 {{ "info@h-insurance.com" }}
@@ -62,7 +62,7 @@
         </div>
         <div class="tel">
           <ul>
-            <li>Services</li>
+            <li class="title">Services</li>
             <li>
               <a> Health Insurance </a>
             </li>
@@ -80,21 +80,6 @@
             </li>
             <li>
               <a> Company Insurance </a>
-            </li>
-          </ul>
-        </div>
-      </div>
-      <div class="rights">
-        <div class="text">
-          <h6>ss</h6>
-        </div>
-        <div class="links">
-          <ul>
-            <li>
-              <a> Legal Notices | </a>
-            </li>
-            <li>
-              <a> Data protection </a>
             </li>
           </ul>
         </div>

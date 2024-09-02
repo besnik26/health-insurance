@@ -1,10 +1,17 @@
 @import "../../styles/index.scss";
 
+.custom-container{
+  max-width: 1268px;
+  width: 100%;
+  
+}
 .full-width {
   width: 100%;
   background-color: #186cce;
   margin-top: 100px;
   position: relative;
+  display: flex;
+  justify-content: center;
 
   .position-absolute {
     position: absolute;
@@ -97,7 +104,7 @@
           }
           .errors {
             span {
-              //   color: $primary-color;
+              color: red;
               font-size: 12px;
             }
           }
@@ -120,10 +127,10 @@
   .footer-section {
     display: grid;
     row-gap: 30px;
-    padding: 160px 30px 30px 30px;
+    padding: 160px 30px 70px 30px;
     .footer {
-      display: grid;
-      grid-auto-flow: column;
+      display: flex;
+      justify-content: space-around;
 
       .work-hours,
       .contact,
@@ -132,12 +139,14 @@
           list-style: none;
           padding: 0;
           display: grid;
-          gap: 10px;
+          gap: 5px;
+          .title{
+            font-size: 17px;
+            font-weight: 700;
+            margin-bottom: 10px;
+          }
           li {
-            &:first-of-type {
-              //color: $white-color;
-              font-size: 16px;
-            }
+            
             color: white;
             font-size: 13.28px;
 
@@ -149,32 +158,44 @@
         }
       }
       .media {
-        display: grid;
-        gap: 24px;
+        display: flex;
+        flex-direction: column;
+        row-gap: 25px;
         .img {
           max-width: 40px;
           max-height: 40px;
           img {
             border: 1px solid white;
             border-radius: 10px;
-          }
+            width: 100%;
+            height: 100%;
+          } 
         }
         .social-media {
-          display: grid;
-          grid-auto-flow: column;
-          justify-content: start;
+          display: flex;
+          justify-content: space-between;
           gap: 12px;
         }
 
         @include mobile-view {
           margin-bottom: 24px;
+          align-items: center;
+          .img {
+            max-width: 40px;
+            max-height: 40px;
+            img {
+              border: 1px solid white;
+              border-radius: 10px;
+            } 
+          }
         }
       }
 
       @include mobile-view {
-        justify-items: center;
+        flex-direction: column;
+        align-items: center;
+        row-gap: 20px;
         text-align: center;
-        grid-auto-flow: row;
       }
     }
     .rights {

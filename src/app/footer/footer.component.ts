@@ -13,18 +13,13 @@ import {NgOptimizedImage} from "@angular/common";
 @Component({
   selector: 'app-footer',
   standalone: true,
-  imports: [],
+  imports: [RouterLink],
   templateUrl: './footer.component.html',
   styleUrl: './footer.component.scss'
 })
 export class FooterComponent implements OnInit{
-  subscribeFormSubmitted = false;
-  isSubmitting = false;
-  subSubmitted: boolean = false;
   subscribeForm!: FormGroup;
-  selectedLanguage: string = "";
-
-
+  selectedLanguage: string = "en";
 
   constructor(
     private fb: FormBuilder,
@@ -32,19 +27,14 @@ export class FooterComponent implements OnInit{
     private translateService: TranslateService
   ) {
     this.buildForm();
-    this.selectedLanguage = this.translateService.currentLang;
-
-    this.translateService.onLangChange.subscribe((event: LangChangeEvent) => {
-      this.selectedLanguage = event.lang;
-    });
+    this.selectedLanguage = this.translateService.currentLang || 'en';
+    this.translateService.onLangChange.subscribe((event:LangChangeEvent)=>{
+      this.selectedLanguage =event.lang;
+    })
   }
 
   ngOnInit() {
-    this.router.events
-      .pipe(filter((event) => event instanceof NavigationEnd))
-      .subscribe(() => {
-        this.subscribeForm.reset();
-      });
+    
   }
 
   private buildForm() {
@@ -55,17 +45,22 @@ export class FooterComponent implements OnInit{
   }
 
   onSend() {
-    this.isSubmitting = true;
-    this.subscribeFormSubmitted = true;
-
     if (this.subscribeForm.valid) {
-      this.subscribeFormSubmitted = false;
-      this.subSubmitted = true;
-      this.subscribeForm.reset();
-      this.isSubmitting = false;
+      setTimeout(() => this.resetForm(), 2500)
     } else {
-      this.isSubmitting = false;
+      this.markFormGroupTouched(this.subscribeForm);
     }
   }
+
+  markFormGroupTouched(formGroup:FormGroup){
+    Object.values(formGroup.controls).forEach(control =>{
+      control.markAsTouched();
+    })
+  }
+
+  resetForm(){
+    this.subscribeForm.reset();
+  }
+
   
 }

@@ -7,23 +7,23 @@
       </div>
       <div class="form">
         <form>
-          <div class="input">
-            <input
+          <div class="input-cover">
+            <div class="input-div">
+              <input
               type="email"
               placeholder="Ihre E-Mail"
               formControlName="email"
-            />
-            <button (click)="onSend()" [disabled]="isSubmitting">Submit</button>
+              />
+              <div class="errors">
+                @if (subscribeForm.get('email')?.invalid && subscribeForm.get('email')?.touched) {
+                <span class="error"> This field is required </span>
+                }
+              </div>
+            </div>
+            
+            <button type="button" (click)="onSend()" >Submit</button>
           </div>
-          <div class="errors">
-            @if (subscribeFormSubmitted &&
-            subscribeForm.get('email')?.errors?.['required']) {
-            <span class="error"> This field is required </span>
-            } @if (subscribeFormSubmitted &&
-            subscribeForm.get('email')?.hasError('pattern')) {
-            <span class="error"> This field is required </span>
-            }
-          </div>
+          
         </form>
       </div>
     </div>
@@ -47,7 +47,7 @@
             <li class="title">Open hours</li>
             <li>Monday-Friday</li>
             <li>08:00 - 12:00</li>
-            <li>08:00 - 12:00</li>
+            <li>13:00 - 17:00</li>
           </ul>
         </div>
         <div class="contact">
@@ -64,22 +64,22 @@
           <ul>
             <li class="title">Services</li>
             <li>
-              <a> Health Insurance </a>
+              <a [routerLink]="['/', selectedLanguage, 'health-insurance']"> Health Insurance </a>
             </li>
             <li>
-              <a> Provision </a>
+              <a [routerLink]="['/', selectedLanguage, 'provision']"> Provision </a>
             </li>
             <li>
-              <a> Legal Insurance </a>
+              <a [routerLink]="['/', selectedLanguage, 'legal-insurance']"> Legal Insurance </a>
             </li>
             <li>
-              <a> Car Insurance </a>
+              <a [routerLink]="['/', selectedLanguage, 'car-insurance']"> Car Insurance </a>
             </li>
             <li>
-              <a> Pet Insurance </a>
+              <a [routerLink]="['/', selectedLanguage, 'pet-insurance']"> Pet Insurance </a>
             </li>
             <li>
-              <a> Company Insurance </a>
+              <a [routerLink]="['/', selectedLanguage, 'company-insurance']"> Company Insurance </a>
             </li>
           </ul>
         </div>

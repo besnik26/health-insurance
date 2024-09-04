@@ -15,26 +15,26 @@
                 </a></li>
                 <li class="dropdown k-vergleich" (click)="toggleDropdown()">
                   <a class="dropdown-services" [ngClass]="{'bold-text': isDropdownOpen}">Insurances
-                    <!-- <img class="dropdown-arrow" ngSrc="assets/images/arrow-down-caret.svg" height="8" width="8" alt="arrow-down arrow"
-                         [class.rotate-90]="isDropdownOpen"> -->
+                    <img class="dropdown-arrow" ngSrc="../../assets/images/navbar/arrow-down-caret.svg" height="8" width="8" alt="arrow-down arrow"
+                         [class.rotate-90]="isDropdownOpen">
                         </a>
                   <div class="dropdown-content"
                        [ngClass]="{ 'show-dropdown': isDropdownOpen, 'close-dropdown': !isDropdownOpen }">
                     
                        <div class="dropdown-div">
-                        <div>
+                        <div style="width: 100%;">
                           <ul>
-                            <li (click)="scrollToTop()" ><a routerLinkActive="bold-text" [routerLink]="['/', selectedLanguage, 'health-insurance']"  >Health Insurance</a></li>
-                            <li (click)="scrollToTop()" ><a routerLinkActive="bold-text" [routerLink]="['/', selectedLanguage, 'provision']"  >Provision</a></li>
-                            <li (click)="scrollToTop()" ><a routerLinkActive="bold-text" [routerLink]="['/', selectedLanguage, 'legal-insurance']"  >Legal Insurance</a></li>
-                            <li (click)="scrollToTop()" ><a routerLinkActive="bold-text" [routerLink]="['/', selectedLanguage, 'car-insurance']"  >Car Insurance</a></li>
-                            <li (click)="scrollToTop()" ><a routerLinkActive="bold-text" [routerLink]="['/', selectedLanguage, 'pet-insurance']"  >Pet Insurance</a></li>
-                            <li (click)="scrollToTop()" ><a routerLinkActive="bold-text" [routerLink]="['/', selectedLanguage, 'company-insurance']"  >Company Insurance</a></li>
+                            <li (click)="scrollToTop()"[routerLink]="['/', selectedLanguage, 'health-insurance']"  ><a routerLinkActive="bold-text" [routerLink]="['/', selectedLanguage, 'health-insurance']"  >Health Insurance</a></li>
+                            <li (click)="scrollToTop()"[routerLink]="['/', selectedLanguage, 'provision']" ><a routerLinkActive="bold-text" [routerLink]="['/', selectedLanguage, 'provision']"  >Provision</a></li>
+                            <li (click)="scrollToTop()"[routerLink]="['/', selectedLanguage, 'legal-insurance']" ><a routerLinkActive="bold-text" [routerLink]="['/', selectedLanguage, 'legal-insurance']"  >Legal Insurance</a></li>
+                            <li (click)="scrollToTop()"[routerLink]="['/', selectedLanguage, 'car-insurance']" ><a routerLinkActive="bold-text" [routerLink]="['/', selectedLanguage, 'car-insurance']"  >Car Insurance</a></li>
+                            <li (click)="scrollToTop()"[routerLink]="['/', selectedLanguage, 'pet-insurance']" ><a routerLinkActive="bold-text" [routerLink]="['/', selectedLanguage, 'pet-insurance']"  >Pet Insurance</a></li>
+                            <li (click)="scrollToTop()"[routerLink]="['/', selectedLanguage, 'company-insurance']" ><a routerLinkActive="bold-text" [routerLink]="['/', selectedLanguage, 'company-insurance']"  >Company Insurance</a></li>
                           </ul>
                        </div>
                        </div>
 
-                    <ul class="main-menu mobile-only">
+                    <ul class="main-menu mobile-only"> 
                       <li (click)="scrollToTop()"><a (click)="closeAllDropdowns()" routerLinkActive="zusatz-active" [routerLink]="['/', selectedLanguage, 'health-insurance']"  >Health Insurance</a></li>
                       <li (click)="scrollToTop()" ><a (click)="closeAllDropdowns()" routerLinkActive="zusatz-active" [routerLink]="['/', selectedLanguage, 'provision']" >Provision</a></li>
                       <li (click)="scrollToTop()"><a (click)="closeAllDropdowns()" routerLinkActive="zusatz-active" [routerLink]="['/', selectedLanguage, 'legal-insurance']">Legal Insurance</a></li>

@@ -7,14 +7,25 @@
     display: flex;
     justify-content: center;
     margin: 150px 0px 180px 0;
+    @include mobile-view{
+        padding: 0 16px;
+        margin: 20px 0px 140px 0;
+    }
     h2{
         text-align: center;
         margin-bottom: 60px;
+        
+        @include mobile-view{
+            margin-bottom: 30px;
+        }
     }
     .accordion-cover{
         padding: 0 16px; 
         display: flex;
         justify-content: center;
+        @include mobile-view{
+            padding: 0;
+        }
         .acc-div{
             max-width: 850px;
             width: 100%;

@@ -54,7 +54,7 @@ small{
     justify-content: center;
     transition: all 0.7s ease;
     @include mobile-view{
-        margin: 80px 0 80px 0;
+        margin: 60px 0 60px 0;
     }
     .form-section{
         display: flex;
@@ -68,7 +68,7 @@ small{
         }
         .form-div{
             max-width: 475px;
-            max-height: 620px;
+            max-height: 650px;
             width: 100%;
             background-color: white;
             box-shadow: #64646f33 0 7px 29px;

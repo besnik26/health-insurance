@@ -60,7 +60,7 @@
         cursor: pointer;
       }
       .bold-text{
-        font-weight: 600;
+        font-weight: 700;
         opacity: 1!important;
       }
       ::ng-deep{
@@ -123,7 +123,7 @@
               display: flex;
               justify-content: flex-start;
               column-gap: 30px;
-              background-color: white;
+              background-color: transparent;
               border-radius: 16px;
               width: 100%;
               padding: 10px 0;
@@ -132,7 +132,12 @@
               
                 li{
                   a{
-                    color:#186cce;
+                    color:white;
+                  }
+                  &:hover{
+                    a{
+                      font-weight: 700;
+                    }
                   }
                 }
               }
@@ -145,38 +150,12 @@
             .neu{
               border-radius: 0 18px 0 0;
             }
-            // .zusatz{
-            //   margin: 0 0 0 15px;
-            //   border-radius: 23px 0 0 23px;
-            //   padding: 11px 0 11px 7px;
-            //   .bold-text{
-            //     color: #186cce!important;
-            //   }
-            //   a{
-            //     color: #506B8A;
-            //   }
-            //   background-color: white!important;
-            // }
+            
             a{
               color: #979797;
               width: 100%;
             }
-            // .gray-background{
-            //   background-color: #f3f3f3;
-            //   border-radius: 0 18px  18px 0;
-            //   padding: 2px 0;
-            //   width: 263px;
-            // }
-            // .gray-background-2{
-            //   background-color: #f3f3f3;
-            //   padding: 2px 0;
-            //   width: 262px;
-            // }
-            // .white-background{
-            //   background-color: white;
-            //   border-radius: 18px 0 0 18px;
-            //   width: 212px;
-            // }
+            
           }
           .main-menu{
             padding: 14px 0;
@@ -186,29 +165,7 @@
             padding: 0;
             display: none;
           }
-          // .desktop-only{
-          //   background-color: #3D77BB;
-          //   li{
-          //     background-color: #3D77BB;
-          //     padding:11px 23px 11px 32px;
-          //   }
-          //   .zusatz{
-          //     padding:11px 23px 11px 18px;
-          //   }
-          //   border-radius: 15px 0 0 15px;
-          //   a{
-          //     color: #FFFFFF;
-          //     opacity: 0.5;
-          //   }
-          // }
-          // .dropdown-links-2{
-          //   background-color: white;
-          //   border-radius: 0 18px 18px 0;
-          // }
-          // .dropdown-links-3{
-          //   background-color: #f3f3f3;
-          //   border-radius: 0 18px 18px 0;
-          // }
+         
         }
 
       }
@@ -574,67 +531,10 @@
               }
 
               .white-background {
-                //display: none;
                 width: 200px;
               }
 
-              .desktop-only {
-                //border-radius: 18px;
-                //display: none;
-              }
-
-              //.mobile-only {
-              //  display: block;
-              //  padding: 12px 12px 0 12px;
-              //  width: 100%;
-              //  background-color: #3D77BB;
-              //  border-radius: 18px;
-              //  margin-top: 9px;
-              //
-              //  li {
-              //    padding: 0 0 13px 0 !important;
-              //  }
-              //
-              //  a {
-              //    color: #D8E4F1;
-              //  }
-              //
-              //  .second-dropdown {
-              //    .content-div {
-              //      display: none;
-              //
-              //      &.close,
-              //      &.show {
-              //        display: block;
-              //        background-color: white;
-              //        border-radius: 18px;
-              //        padding: 12px 16px 0 16px;
-              //        margin-top: 11px;
-              //
-              //        ul {
-              //          padding: 0;
-              //
-              //          li {
-              //            padding: 0 0 9px 0 !important;
-              //            font-size: 14px;
-              //
-              //            a {
-              //              color: #979797;
-              //            }
-              //          }
-              //        }
-              //      }
-              //    }
-              //  }
-              //}
-
-              .dropdown-links-2 {
-                //display: none;
-              }
-
-              .dropdown-links-3 {
-                //display: none;
-              }
+              
             }
 
             .int-button {

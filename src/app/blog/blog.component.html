@@ -11,7 +11,10 @@
 
     <div class="blog-main">
       <div class="left-side">
-
+        <div class="search-div-mobile">
+          <input [(ngModel)]="searchInput" (input)="searchBlogs()" placeholder="Search for blogs..."  type="text">
+          <img src="../../assets/images/blogs/search-icon.svg" alt="search">
+        </div>
         <div class="blog-left">
           @if (noBlogsFound) {
             <div class="not-found">
@@ -39,7 +42,7 @@
       </div>
       <div class="blog-right">
         <div class="search-div">
-          <input [(ngModel)]="searchInput" (input)="searchBlogs()"  type="text">
+          <input [(ngModel)]="searchInput" (input)="searchBlogs()" placeholder="Search for blogs..."  type="text">
           <img src="../../assets/images/blogs/search-icon.svg" alt="search">
         </div>
         <div class="blogs">

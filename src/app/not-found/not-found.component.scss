@@ -1,4 +1,25 @@
+@import "../../styles/index.scss";
+
+.container{
+    max-width: 1268px;
+}
 .main{
-    margin: 300px 0;
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    padding: 110px 0 100px 0;
+    @include mobile-view{
+        padding: 110px 16px 100px 16px;
+    }
+    .hero{
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+    .img-div{
+        max-width: 600px;
+        width: 100%;
+        img{
+            width: 100%;
+        }
+    }
 }

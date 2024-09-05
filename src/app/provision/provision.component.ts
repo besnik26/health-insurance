@@ -36,4 +36,15 @@ export class ProvisionComponent {
       content: 'Accessing your funds is easy. You can withdraw funds according to the terms of your plan, either through regular payments or lump sums.' 
     },
   ];
+
+  scrollToSection() {
+    const section = document.getElementById('targetForm');
+    if (section) {
+      const sectionPosition = section.getBoundingClientRect().top + window.scrollY;
+      window.scrollTo({
+        top: sectionPosition - 120, 
+        behavior: 'smooth'
+      });
+    }
+  }
 }

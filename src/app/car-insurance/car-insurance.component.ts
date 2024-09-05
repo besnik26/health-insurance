@@ -36,4 +36,16 @@ export class CarInsuranceComponent {
       content: 'Yes, we offer various discounts, such as safe driver discounts, multi-policy discounts, and more. Ask our team about how you can save.' 
     },
   ];
+
+
+  scrollToSection() {
+    const section = document.getElementById('targetForm');
+    if (section) {
+      const sectionPosition = section.getBoundingClientRect().top + window.scrollY;
+      window.scrollTo({
+        top: sectionPosition - 120, 
+        behavior: 'smooth'
+      });
+    }
+  }
 }

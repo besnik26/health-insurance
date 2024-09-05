@@ -2,6 +2,7 @@
     title="Company Insurance: Protecting Your Business for Continued Success"
     description="Secure your company’s future with our robust insurance solutions. Our plans cover everything from property damage to liability claims, ensuring your business remains resilient in the face of challenges, allowing you to focus on growth and success."
     imgSrc="../../assets/images/company-insurance/company-insurance.svg"
+    (scrollToSection)="scrollToSection()"
 ></app-global-header>
 
 <app-insurance-content 
@@ -13,6 +14,6 @@
     secondDescription={{secondDesc}}
 ></app-insurance-content>
 
-<app-global-form></app-global-form>
+<app-global-form id="targetForm"></app-global-form>
 
 <app-global-accordion [dataArray]="accordionData"></app-global-accordion>

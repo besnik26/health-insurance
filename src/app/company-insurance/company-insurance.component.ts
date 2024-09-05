@@ -36,4 +36,16 @@ export class CompanyInsuranceComponent {
       content: 'Yes, our company insurance can include coverage for remote employees, ensuring they are protected no matter where they work.' 
     },
   ];
+
+
+  scrollToSection() {
+    const section = document.getElementById('targetForm');
+    if (section) {
+      const sectionPosition = section.getBoundingClientRect().top + window.scrollY;
+      window.scrollTo({
+        top: sectionPosition - 120, 
+        behavior: 'smooth'
+      });
+    }
+  }
 }

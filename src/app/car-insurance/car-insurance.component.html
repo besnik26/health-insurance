@@ -2,6 +2,7 @@
     title="Car Insurance: Drive with Confidence and Peace of Mind"
     description="Protect your vehicle and yourself with our reliable car insurance plans. Whether it’s a minor fender bender or a major collision, our coverage ensures you’re back on the road quickly and safely, with the financial support you need."
     imgSrc="../../assets/images/car-insurance/car-insurance.svg"
+    (scrollToSection)="scrollToSection()"
 ></app-global-header>
 <app-insurance-content 
     firstImage="../../assets/images/car-insurance/car-1.jpg"
@@ -12,6 +13,6 @@
     secondDescription={{secondDesc}}
 ></app-insurance-content>
 
-<app-global-form></app-global-form>
+<app-global-form id="targetForm"></app-global-form>
 
 <app-global-accordion [dataArray]="accordionData"></app-global-accordion>

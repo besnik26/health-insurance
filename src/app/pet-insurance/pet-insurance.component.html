@@ -2,6 +2,7 @@
     title="Pet Insurance: Comprehensive Care for Your Furry Family Members"
     description="Give your pets the care they deserve with our affordable and extensive pet insurance plans. From routine check-ups to emergency treatments, we ensure your pets stay healthy and happy, without the burden of unexpected veterinary bills."
     imgSrc="../../assets/images/pet-insurance/pet-insurance.svg"
+    (scrollToSection)="scrollToSection()"
 ></app-global-header>
 <app-insurance-content 
     firstImage="../../assets/images/pet-insurance/pet-2.jpg"
@@ -12,6 +13,6 @@
     secondDescription={{secondDesc}}
 ></app-insurance-content>
 
-<app-global-form></app-global-form>
+<app-global-form id="targetForm"></app-global-form>
 
 <app-global-accordion [dataArray]="accordionData"></app-global-accordion>

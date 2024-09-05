@@ -31,7 +31,28 @@ selectedLanguage:string = 'en';
     }
   }
 
- 
+  scrollToSection() {
+    const section = document.getElementById('targetForm');
+    if (section) {
+      const sectionPosition = section.getBoundingClientRect().top + window.scrollY;
+      window.scrollTo({
+        top: sectionPosition - 120, 
+        behavior: 'smooth'
+      });
+    }
+  }
+
+  scrollToService() {
+    const section = document.getElementById('targetService');
+    if (section) {
+      const sectionPosition = section.getBoundingClientRect().top + window.scrollY;
+      window.scrollTo({
+        top: sectionPosition - 120, 
+        behavior: 'smooth'
+      });
+    }
+  }
+
   private isBrowser(): boolean {
     return typeof window !== 'undefined';
   }

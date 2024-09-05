@@ -36,4 +36,15 @@ export class HealthInsuranceComponent {
       content: 'Coverage typically begins after a short waiting period, which varies depending on the plan you choose. Our team can provide specific details based on your selection.' 
     },
   ];
+
+  scrollToSection() {
+    const section = document.getElementById('targetForm');
+    if (section) {
+      const sectionPosition = section.getBoundingClientRect().top + window.scrollY;
+      window.scrollTo({
+        top: sectionPosition - 120, 
+        behavior: 'smooth'
+      });
+    }
+  }
 }

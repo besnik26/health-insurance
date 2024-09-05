@@ -36,4 +36,15 @@ export class LegalInsuranceComponent {
       content: 'Yes, many of our legal insurance plans cover court costs, attorney fees, and other related expenses.' 
     },
   ];
+
+  scrollToSection() {
+    const section = document.getElementById('targetForm');
+    if (section) {
+      const sectionPosition = section.getBoundingClientRect().top + window.scrollY;
+      window.scrollTo({
+        top: sectionPosition - 120, 
+        behavior: 'smooth'
+      });
+    }
+  }
 }

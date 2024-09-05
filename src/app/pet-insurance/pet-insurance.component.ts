@@ -36,4 +36,15 @@ export class PetInsuranceComponent {
       content: 'The waiting period depends on the specific policy, but it generally ranges from a few days to a couple of weeks.' 
     },
   ];
+
+  scrollToSection() {
+    const section = document.getElementById('targetForm');
+    if (section) {
+      const sectionPosition = section.getBoundingClientRect().top + window.scrollY;
+      window.scrollTo({
+        top: sectionPosition - 120, 
+        behavior: 'smooth'
+      });
+    }
+  }
 }

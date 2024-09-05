@@ -43,6 +43,16 @@ export class BlogComponent implements OnInit {
     const url =`/${this.selectedLanguage}/blogs/${blogUrl}`;
     window.open(url, '_blank', 'noopener');
   }
+  scrollToSection() {
+    const section = document.getElementById('targetBlogs');
+    if (section) {
+      const sectionPosition = section.getBoundingClientRect().top + window.scrollY;
+      window.scrollTo({
+        top: sectionPosition - 120, 
+        behavior: 'smooth'
+      });
+    }
+  }
 
   fetchBlogs(): void {
     const url: string = `../../../../assets/blogs/${this.selectedLanguage}-blogs.json`;

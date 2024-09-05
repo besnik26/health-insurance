@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/health-insurance-project",
+            "outputPath": "dist/",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -50,13 +50,13 @@
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "500kb",
-                  "maximumError": "1mb"
+                  "maximumWarning": "1.5mb",
+                  "maximumError": "2mb"
                 },
                 {
                   "type": "anyComponentStyle",
-                  "maximumWarning": "2kb",
-                  "maximumError": "4kb"
+                  "maximumWarning": "20kb",
+                  "maximumError": "25kb"
                 }
               ],
               "outputHashing": "all"
@@ -101,8 +101,13 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss",
-              "node_modules/intl-tel-input/build/css/intlTelInput.css"
+              "node_modules/@taiga-ui/core/styles/taiga-ui-theme.less",
+              "node_modules/@taiga-ui/core/styles/taiga-ui-fonts.less",
+              "node_modules/@taiga-ui/styles/taiga-ui-global.less",
+              "src/styles/index.scss",
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "node_modules/intl-tel-input/build/css/intlTelInput.css",
+              "src/styles.scss"
             ],
             "scripts": []
           }

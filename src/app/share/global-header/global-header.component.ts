@@ -11,6 +11,7 @@ export class GlobalHeaderComponent {
   @Input() title:string = '';
   @Input() description:string = '';
   @Input() imgSrc:string = '';
+  @Input() buttonText:string = '';
 
   @Output() scrollToSection: EventEmitter<void> = new EventEmitter();
 

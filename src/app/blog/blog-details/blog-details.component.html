@@ -1,6 +1,6 @@
 <div class="container-fluid blog-details-section">
     <div class="container">
-        <div>
+        <div class="blog-cover">
             <div class="date-time-div">
 
                 <p><img class="clock-img" src="../../../assets/images/blogs/clock.png">{{ selectedBlog.date }}</p>
@@ -17,13 +17,13 @@
                     </div>
                     <div class="text-div">
                         @if(selectedBlog.second_title){
-                            <h3>- {{selectedBlog.second_title}}</h3>
+                            <h3>{{selectedBlog.second_title}}</h3>
                         }
                         @if(selectedBlog.second_paragraph){
-                            <p>{{selectedBlog.second_paragraph}}</p>
+                            <p class="first-paragraph">{{selectedBlog.second_paragraph}}</p>
                         }
                         @if (selectedBlog.third_title) {
-                            <h3>- {{selectedBlog.third_title}}</h3>
+                            <h3>{{selectedBlog.third_title}}</h3>
                         }
                         @if (selectedBlog.third_paragraph) {
                             <p>{{selectedBlog.third_paragraph}}</p>
@@ -32,13 +32,13 @@
                 </div>
                 <div class="other-details">
                     @if (selectedBlog.fourth_title) {
-                        <h3>- {{selectedBlog.fourth_title}}</h3>
+                        <h3>{{selectedBlog.fourth_title}}</h3>
                     }
                     @if (selectedBlog.fourth_paragraph) {
                         <p>{{selectedBlog.fourth_paragraph}}</p>
                     }
                     @if (selectedBlog.fifth_title) {
-                        <h3>- {{selectedBlog.fifth_title}}</h3>
+                        <h3>{{selectedBlog.fifth_title}}</h3>
                     }
                     @if (selectedBlog.fifth_paragraph) {
                         <p>{{selectedBlog.fifth_paragraph}}</p>

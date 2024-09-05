@@ -42,18 +42,23 @@ small{
     display: flex;
     justify-content: center;
     padding: 120px 0 140px 0;
+    @include mobile-view{
+        padding: 120px 0 100px 0;
+    }
     
     .hero{
         display: flex;
         align-items: center;
         justify-content: center;
         column-gap: 100px;
+        @include mobile-view{
+            flex-direction: column-reverse;
+            row-gap: 20px;
+            padding: 0 16px;
+        }
     }
     .text-div{
         max-width: 450px;
-        h1{
-            // color: #8CC540;
-        }
         p{
             margin: 5px 0 15px 0;
         }
@@ -84,8 +89,16 @@ small{
                 font-size: 13px;
             }
             
+            
         }
-
+        @include mobile-view{
+            h1{
+                text-align: center!important;
+            }
+            p{
+                text-align: center!important;
+            }
+        }
         button{
             // max-width: 150px;
             width: 100%;

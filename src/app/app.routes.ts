@@ -1,35 +1,57 @@
 import { Routes } from '@angular/router';
-import { NotFoundComponent } from './not-found/not-found.component';
-import { HomeComponent } from './home/home.component';
-import { CarInsuranceComponent } from './car-insurance/car-insurance.component';
-import { ProvisionComponent } from './provision/provision.component';
-import { LegalInsuranceComponent } from './legal-insurance/legal-insurance.component';
-import { HealthInsuranceComponent } from './health-insurance/health-insurance.component';
-import { CompanyInsuranceComponent } from './company-insurance/company-insurance.component';
-import { PetInsuranceComponent } from './pet-insurance/pet-insurance.component';
-import { ContactComponent } from './contact/contact.component';
-import { BlogComponent } from './blog/blog.component';
-import { BlogDetailsComponent } from './blog/blog-details/blog-details.component';
+
 export const routes: Routes = [
 
     { path: '', redirectTo: 'en/home', pathMatch: 'full' },
     {
-    path: ':lang',
+        path: ':lang',
         children: [
-
             { path: '', redirectTo: 'home', pathMatch: 'full' },
-            { path: 'home', component: HomeComponent },
-            { path: 'car-insurance', component:CarInsuranceComponent},
-            { path: 'provision', component: ProvisionComponent },
-            { path: 'legal-insurance', component: LegalInsuranceComponent },
-            { path: 'health-insurance', component: HealthInsuranceComponent },
-            { path: 'company-insurance', component: CompanyInsuranceComponent },
-            { path: 'pet-insurance', component: PetInsuranceComponent },
-            { path: 'contact', component:ContactComponent},
-            { path: 'blogs', component:BlogComponent},
-            { path: 'blogs/:id', component:BlogDetailsComponent},
-            { path: '**', component: NotFoundComponent },
-            
-        ]
-    }
+            {
+                path: 'home',
+                loadComponent: () => import('./home/home.component').then((m) => m.HomeComponent),
+            },
+            {
+                path: 'car-insurance',
+                loadComponent: () => import('./car-insurance/car-insurance.component').then((m) => m.CarInsuranceComponent),
+            },
+            {
+                path: 'provision',
+                loadComponent: () => import('./provision/provision.component').then((m) => m.ProvisionComponent),
+            },
+            {
+                path: 'legal-insurance',
+                loadComponent: () => import('./legal-insurance/legal-insurance.component').then((m) => m.LegalInsuranceComponent),
+            },
+            {
+                path: 'health-insurance',
+                loadComponent: () => import('./health-insurance/health-insurance.component').then((m) => m.HealthInsuranceComponent),
+            },
+            {
+                path: 'company-insurance',
+                loadComponent: () => import('./company-insurance/company-insurance.component').then((m) => m.CompanyInsuranceComponent),
+            },
+            {
+                path: 'pet-insurance',
+                loadComponent: () => import('./pet-insurance/pet-insurance.component').then((m) => m.PetInsuranceComponent),
+            },
+            {
+                path: 'contact',
+                loadComponent: () => import('./contact/contact.component').then((m) => m.ContactComponent),
+            },
+            {
+                path: 'blogs',
+                loadComponent: () => import('./blog/blog.component').then((m) => m.BlogComponent),
+            },
+            {
+                path: 'blogs/:id',
+                loadComponent: () => import('./blog/blog-details/blog-details.component').then((m) => m.BlogDetailsComponent),
+            },
+            {
+                path: '**',
+                loadComponent: () => import('./not-found/not-found.component').then((m) => m.NotFoundComponent),
+            },
+        ],
+    },
 ];
+

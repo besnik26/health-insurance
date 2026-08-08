@@ -9,47 +9,47 @@ export const routes: Routes = [
             { path: '', redirectTo: 'home', pathMatch: 'full' },
             {
                 path: 'home',
-                loadComponent: () => import('./home/home.component').then((m) => m.HomeComponent),
+                loadComponent: () => import('./pages/home/home.component').then((m) => m.HomeComponent),
             },
             {
                 path: 'car-insurance',
-                loadComponent: () => import('./car-insurance/car-insurance.component').then((m) => m.CarInsuranceComponent),
+                loadComponent: () => import('./pages/car-insurance/car-insurance.component').then((m) => m.CarInsuranceComponent),
             },
             {
                 path: 'provision',
-                loadComponent: () => import('./provision/provision.component').then((m) => m.ProvisionComponent),
+                loadComponent: () => import('./pages/provision/provision.component').then((m) => m.ProvisionComponent),
             },
             {
                 path: 'legal-insurance',
-                loadComponent: () => import('./legal-insurance/legal-insurance.component').then((m) => m.LegalInsuranceComponent),
+                loadComponent: () => import('./pages/legal-insurance/legal-insurance.component').then((m) => m.LegalInsuranceComponent),
             },
             {
                 path: 'health-insurance',
-                loadComponent: () => import('./health-insurance/health-insurance.component').then((m) => m.HealthInsuranceComponent),
+                loadComponent: () => import('./pages/health-insurance/health-insurance.component').then((m) => m.HealthInsuranceComponent),
             },
             {
                 path: 'company-insurance',
-                loadComponent: () => import('./company-insurance/company-insurance.component').then((m) => m.CompanyInsuranceComponent),
+                loadComponent: () => import('./pages/company-insurance/company-insurance.component').then((m) => m.CompanyInsuranceComponent),
             },
             {
                 path: 'pet-insurance',
-                loadComponent: () => import('./pet-insurance/pet-insurance.component').then((m) => m.PetInsuranceComponent),
+                loadComponent: () => import('./pages/pet-insurance/pet-insurance.component').then((m) => m.PetInsuranceComponent),
             },
             {
                 path: 'contact',
-                loadComponent: () => import('./contact/contact.component').then((m) => m.ContactComponent),
+                loadComponent: () => import('./pages/contact/contact.component').then((m) => m.ContactComponent),
             },
             {
                 path: 'blogs',
-                loadComponent: () => import('./blog/blog.component').then((m) => m.BlogComponent),
+                loadComponent: () => import('./pages/blog/blog.component').then((m) => m.BlogComponent),
             },
             {
                 path: 'blogs/:id',
-                loadComponent: () => import('./blog/blog-details/blog-details.component').then((m) => m.BlogDetailsComponent),
+                loadComponent: () => import('./pages/blog/blog-details/blog-details.component').then((m) => m.BlogDetailsComponent),
             },
             {
                 path: '**',
-                loadComponent: () => import('./not-found/not-found.component').then((m) => m.NotFoundComponent),
+                loadComponent: () => import('./pages/not-found/not-found.component').then((m) => m.NotFoundComponent),
             },
         ],
     },

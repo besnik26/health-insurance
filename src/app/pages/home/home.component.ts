@@ -1,0 +1,59 @@
+import { LangChangeEvent } from '@ngx-translate/core';
+import { TranslateService } from '@ngx-translate/core';
+import { Component } from '@angular/core';
+import { GlobalFormComponent } from '../../shared/global-form/global-form.component';
+import { RouterLink } from '@angular/router';
+import { GlobalHeaderComponent } from '../../shared/global-header/global-header.component';
+import { TestimonialComponent } from '../../shared/testimonial/testimonial.component';
+
+@Component({
+  selector: 'app-home',
+  standalone: true,
+  imports: [GlobalFormComponent, RouterLink, GlobalHeaderComponent, TestimonialComponent],
+  templateUrl: './home.component.html',
+  styleUrl: './home.component.scss'
+})
+export class HomeComponent {
+selectedLanguage:string = 'en';
+
+  constructor(private translateService: TranslateService){
+    this.selectedLanguage = this.translateService.currentLang || 'en';
+    this.translateService.onLangChange.subscribe((event:LangChangeEvent)=>{
+      this.selectedLanguage =event.lang;
+    })
+  
+  }
+
+
+  scrollToTop() {
+    if (this.isBrowser()) {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  }
+
+  scrollToSection() {
+    const section = document.getElementById('targetForm');
+    if (section) {
+      const sectionPosition = section.getBoundingClientRect().top + window.scrollY;
+      window.scrollTo({
+        top: sectionPosition - 120, 
+        behavior: 'smooth'
+      });
+    }
+  }
+
+  scrollToService() {
+    const section = document.getElementById('targetService');
+    if (section) {
+      const sectionPosition = section.getBoundingClientRect().top + window.scrollY;
+      window.scrollTo({
+        top: sectionPosition - 120, 
+        behavior: 'smooth'
+      });
+    }
+  }
+
+  private isBrowser(): boolean {
+    return typeof window !== 'undefined';
+  }
+}
